@@ -1,0 +1,58 @@
+/*
+ * Copyright (c) 2018-2019, Texas Instruments Incorporated
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ * *  Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ *
+ * *  Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * *  Neither the name of Texas Instruments Incorporated nor the names of
+ *    its contributors may be used to endorse or promote products derived
+ *    from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+ * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+ * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+ * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+ * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+ * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ */
+// @cliArgs --board /ti/boards/MSP_EXP432E401Y
+
+/* ======== Board ======== */
+var board = system.deviceData.board.name;
+
+// Add a BOOSTXL-SHARP128 boosterpack
+var BOOSTXL_SHARP128 = scripting.addHardware("/ti/boards/boosterpacks/BOOSTXL-SHARP128");
+// Add a BOOSTXL-K350QVG-S1 boosterpack
+var BOOSTXL_K350QVG_S1 = scripting.addHardware("/ti/boards/boosterpacks/BOOSTXL-K350QVG-S1");
+var lvgldisplay = scripting.addModule("/ti/lvgl/lvgldisplay");
+var lvgldisplay1 = lvgldisplay.addInstance();
+// Preset Configurations
+lvgldisplay.presetConfig = "medium";
+// Name
+lvgldisplay1.$name = "ti_lvgl_lvgldisplay0";
+// Use Hardware - Select the hardware to use, or 'none' to use available header pins
+lvgldisplay1.$hardware = BOOSTXL_K350QVG_S1.components.KENTEC_LCD_DISPLAY;
+// Use Touch Screen - Use Touch Screen
+lvgldisplay1.useTouchScreen = true;
+var Power = scripting.addModule("/ti/drivers/Power");
+if (board.match(/MSP.EXP432P/)) {
+    // Initial Performance Level - The performance level at system start up.
+    Power.initialPerformanceLevel = 3;
+} else if (board.match(/CC[12][36]/)) {
+    // Calibrate RCOSC_LF - Enable calibration of RCOSC_LF.
+    Power.calibrateRCOSC_LF = false;
+}

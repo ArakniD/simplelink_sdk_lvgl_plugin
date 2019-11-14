@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IAR Project Connection File -->
+<iarProjectConnection version="1.6" name="SysConfig Generated Files" oneShot="false"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="IarProjectConnection_1.8.xsd">
+    <files>
+        <path>$PROJ_DIR$/Board.c</path>
+        <path>$PROJ_DIR$/ti_lvgl_ssd2119_disp.c</path>
+        <path>$PROJ_DIR$/lv_port_indev.c</path>
+        <path>$PROJ_DIR$/ti_lvgl_disp_interface.c</path>
+        <path>$PROJ_DIR$/Board.h</path>
+        <path>$PROJ_DIR$/lv_conf.h</path>
+        <path>$PROJ_DIR$/lv_drv_conf.h</path>
+        <path>$PROJ_DIR$/lv_port_disp.h</path>
+        <path>$PROJ_DIR$/lv_port_indev.h</path>
+        <path>$PROJ_DIR$/ti_lvgl_disp_interface.h</path>
+    </files>
+</iarProjectConnection>

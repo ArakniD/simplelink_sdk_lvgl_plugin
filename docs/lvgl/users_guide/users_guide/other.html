@@ -1,0 +1,374 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Other Usage Details &mdash; SimpleLink SDK LVGL Plugin  documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="SimpleLink SDK LVGL Plugin  documentation" href="../index.html"/>
+        <link rel="next" title="Support" href="support.html"/>
+        <link rel="prev" title="Getting Started" href="usage.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+  <header id="tiHeader">
+    <div class="top">
+      <ul>
+        <li id="top_logo">
+          <a href="http://www.ti.com">
+            <img src="../_static/img/ti_logo.png"/>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="nav"></div>
+  </header>
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> SimpleLink SDK LVGL Plugin
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Other Usage Details</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#configuring-littlevgl">Configuring LittlevGL</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#sysconfig">SysConfig</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#brief-overview">Brief Overview</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#memory-considerations">Memory Considerations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#adding-littlevgl-plugin-to-existing-simplelink-sdk-projects">Adding LittlevGL Plugin to Existing SimpleLink SDK Projects</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#regular-non-sysconfig-sdk-project">Regular Non-SysConfig SDK Project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sysconfig-preview-sdk-projects">SysConfig (Preview) SDK Projects</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#porting-custom-displays">Porting Custom Displays</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="support.html">Support</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">SimpleLink SDK LVGL Plugin</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Other Usage Details</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="other-usage-details">
+<h1>Other Usage Details<a class="headerlink" href="#other-usage-details" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="configuring-littlevgl">
+<h2>Configuring LittlevGL<a class="headerlink" href="#configuring-littlevgl" title="Permalink to this headline">¶</a></h2>
+<p>LittlevGL has a configuration header file called <strong>lv_conf.h</strong>. It can be modified manually to configure the library’s basic behavior, disables unused modules and features, adjusts the size of memory buffers in compile time, etc.</p>
+<div class="section" id="sysconfig">
+<h3>SysConfig<a class="headerlink" href="#sysconfig" title="Permalink to this headline">¶</a></h3>
+<p>TI&#8217;s SysConfig tool is a graphical user interface that makes it easy to configure software &amp; hardware components and can be used to configure LittlevGL&#8217;s configuration file, <strong>lv_conf.h</strong></p>
+<p>In this Plugin release, SysConfig is optional and available as a preview. (Future release will expand the use of SysConfig.) <strong>Note: This SimpleLink LVGL Plugin 3.20.xx release is only compatible with SimpleLink SDK 3.20.xx.</strong></p>
+<p>SysConfig versions of the examples are provided in the examples/sysconfig_preview directory tree. These examples are basically the same as the examples in examples/rtos and examples/nortos, except they use SysConfig to generate configuration code instead of having the application provide it.</p>
+<div class="section" id="brief-overview">
+<h4>Brief Overview<a class="headerlink" href="#brief-overview" title="Permalink to this headline">¶</a></h4>
+<p>Examine the <strong>sharpsimpledisplay</strong> example inside the <code class="docutils literal"><span class="pre">&lt;SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR&gt;/examples/sysconfig_preview/&lt;board&gt;/lvgl/sharpsimpledisplay</span></code> directory.</p>
+<p>Located inside each sysconfig_preview example directory is a sharpsimpledisplay.syscfg file. This file can be edited manually or opened up inside the SysConfig GUI:</p>
+<div class="figure" id="id1">
+<img alt="SysConfig overview" src="../_images/syscfg_overview.png" />
+<p class="caption"><span class="caption-number">Fig. 8 </span><span class="caption-text">SysConfig overview</span></p>
+</div>
+<p>The Global Parameters box can be expanded to reveal LittlevGL Library Configurations that are used to generate <strong>lv_conf.h</strong></p>
+<div class="figure" id="id2">
+<img alt="SysConfig overview" src="../_images/syscfg_lvgl_conf.png" />
+<p class="caption"><span class="caption-number">Fig. 9 </span><span class="caption-text">SysConfig overview</span></p>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="memory-considerations">
+<h2>Memory Considerations<a class="headerlink" href="#memory-considerations" title="Permalink to this headline">¶</a></h2>
+<p>LittlevGL requires a minimum of 64 kB Flash/ROM and 10 kB RAM (when configured to use only essential components), but can easily use up &gt; 100 kB Flash/ROM if more advanced features widgets are enabled.</p>
+<p>Keep in mind that exact memory consumption will depend on the features, how many objects/widgets, whether display buffer is used, or the display that are actually used in an application. However, below provides some rough numbers to expect.</p>
+<p>The LittlevGL Display SysConfig module provides 3 preset LittlevGL Configurations: - <strong>Low:</strong> ~50 kB of Flash/ROM and (~15 kB RAM with the Sharp128 display) - Only Default Theme is enabled - Only lv_monospace_8 Font is enabled - Only Label, Image, and Line objects are enabled - <strong>Medium:</strong> ~110 kB of Flash/ROM and (~40 kB RAM with the Kentec display) - Default and Material Themes are enabled - lv_font_dejavu10, lv_font_dejavu20, lv_font_dejavu30, lv_font_dejavu40, and lv_monospace8 are enabled &#64; 1-bit-per-pixel - Additional objects TabView, Bar, Chart, Button, CheckBox, Dropdownlist, &amp; Slider are enabled. - <strong>High:</strong> &gt;150 kB of Flash/ROM and RAM use varies with display/buffer usage - All built-in themes, fonts, and objects are enabled</p>
+</div>
+<div class="section" id="adding-littlevgl-plugin-to-existing-simplelink-sdk-projects">
+<h2>Adding LittlevGL Plugin to Existing SimpleLink SDK Projects<a class="headerlink" href="#adding-littlevgl-plugin-to-existing-simplelink-sdk-projects" title="Permalink to this headline">¶</a></h2>
+<p>Steps shown below demonstrates the procedure in CCS</p>
+<div class="section" id="regular-non-sysconfig-sdk-project">
+<h3>Regular Non-SysConfig SDK Project<a class="headerlink" href="#regular-non-sysconfig-sdk-project" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Copy entire LVGL source code from $(SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR)/source/third_party/lvgl/ to ${PROJECT_ROOT}/lvgl/</li>
+<li>Add include path to compiler options <code class="docutils literal"><span class="pre">${PROJECT_ROOT}/lvgl</span></code> <img alt="Compiler options" src="../_images/syscfg_4.png" /></li>
+<li>Add pre-defined symbol to compiler options <code class="docutils literal"><span class="pre">--define=LV_CONF_INCLUDE_SIMPLE</span></code> <img alt="Compiler options" src="../_images/syscfg_4.png" /></li>
+<li>Copy lv_conf.h from one of the example projects into the project root and configure as needed.</li>
+<li>Copy all applicable display driver and interface files from $(SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR)/source/ti/lvgl/drivers to ${PROJECT_ROOT}/</li>
+<li>Manually update project Board files to configure for corresponding display connections. Or just copy the reference board files from the corresponding LaunchPad&#8217;s example folder.</li>
+<li>Modify main.c<ul>
+<li>Add #include &lt;lv_port_disp.h&gt;</li>
+<li>Add #include &lt;lv_port_indev.h&gt; if using an input device</li>
+<li>Follow LVGL documentation to initialize and utilize LVGL</li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="section" id="sysconfig-preview-sdk-projects">
+<h3>SysConfig (Preview) SDK Projects<a class="headerlink" href="#sysconfig-preview-sdk-projects" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Select SimpleLink SDK LVGL Plugin inside Project Properties -&gt; General -&gt; Products <img alt="Product options" src="../_images/syscfg_1.png" /></li>
+<li>Copy entire LVGL source code from $(SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR)/source/third_party/lvgl/ to ${PROJECT_ROOT}/lvgl/</li>
+<li>Add include path to compiler options <code class="docutils literal"><span class="pre">${PROJECT_ROOT}/lvgl</span></code> <img alt="Compiler options" src="../_images/syscfg_4.png" /></li>
+<li>Add pre-defined symbol to compiler options <code class="docutils literal"><span class="pre">--define=LV_CONF_INCLUDE_SIMPLE</span></code> <img alt="Compiler options" src="../_images/syscfg_4.png" /></li>
+<li>Add LVGL Plugin product.json to SysConfig &#8211;product option <code class="docutils literal"><span class="pre">${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/.metadata/product.json</span></code>, ensuring that the LVGL Plugin product.json is above the SDK product.json</li>
+</ol>
+<div class="figure" id="id3">
+<img alt="SysCfg options" src="../_images/syscfg_5.png" />
+<p class="caption"><span class="caption-number">Fig. 10 </span><span class="caption-text">SysCfg options</span></p>
+</div>
+<ol class="arabic" start="6">
+<li><p class="first">Open .syscfg file in text editor (Right-click -&gt; Open With), and add Display BoosterPacks at the top of .syscfg file:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="n">Add</span> <span class="n">a</span> <span class="n">BOOSTXL</span><span class="o">-</span><span class="n">SHARP128</span> <span class="n">boosterpack</span>
+<span class="n">var</span> <span class="n">BOOSTXL_SHARP128</span> <span class="o">=</span> <span class="n">scripting</span><span class="o">.</span><span class="n">addHardware</span><span class="p">(</span><span class="s2">&quot;/ti/boards/boosterpacks/BOOSTXL-SHARP128&quot;</span><span class="p">);</span>
+<span class="o">//</span> <span class="n">Add</span> <span class="n">a</span> <span class="n">BOOSTXL</span><span class="o">-</span><span class="n">K350QVG</span><span class="o">-</span><span class="n">S1</span> <span class="n">boosterpack</span>
+<span class="n">var</span> <span class="n">BOOSTXL_K350QVG_S1</span> <span class="o">=</span> <span class="n">scripting</span><span class="o">.</span><span class="n">addHardware</span><span class="p">(</span><span class="s2">&quot;/ti/boards/boosterpacks/BOOSTXL-K350QVG-S1&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p><img alt="SysCfg file" src="../_images/syscfg_6.png" /></p>
+</li>
+<li><p class="first">Open .syscfg with SysConfig Editor then add the LittlevGL Display module and configure library/driver <img alt="SysCfg editor" src="../_images/syscfg_7.png" /></p>
+</li>
+<li><p class="first">Modify main.c</p>
+<ul class="simple">
+<li>Add #include &lt;lv_port_disp.h&gt;</li>
+<li>Add #include &lt;lv_port_indev.h&gt; if using an input device</li>
+<li>Follow LVGL documentation to initialize and utilize LVGL</li>
+</ul>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="porting-custom-displays">
+<h2>Porting Custom Displays<a class="headerlink" href="#porting-custom-displays" title="Permalink to this headline">¶</a></h2>
+<p>For detailed instructions on porting a custom display, please follow the <a class="reference external" href="https://docs.littlevgl.com/en/html/porting/index.html">LittlevGL Porting Guide</a></p>
+<p>Following the file structure of the example drivers provided in this Plugin, below are the driver files that need to be ported for a new custom display:</p>
+<ul class="simple">
+<li><strong>lv_port_disp.h, ti_lvgl_ssd2119_disp.c, ti_lvgl_ls013b7dh03_disp.c</strong><ul>
+<li>Driver for display controller which contains required LittlevGL functions: disp_init(), disp_flush</li>
+<li>Implemented from <a class="reference external" href="https://github.com/littlevgl/lvgl/tree/master/porting">LittlevGL&#8217;s porting templates</a>: lv_port_disp_template.c &amp; lv_port_disp_template.h</li>
+</ul>
+</li>
+<li><strong>lv_port_indev.c, lv_port_indev.h</strong><ul>
+<li>Driver for input device, such as touchscreen</li>
+<li>Implemented from <a class="reference external" href="https://github.com/littlevgl/lvgl/tree/master/porting">LittlevGL&#8217;s porting templates</a>: lv_port_indev_template.c &amp; lv_port_indev_template.h</li>
+</ul>
+</li>
+<li><strong>lv_drv_conf.h</strong><ul>
+<li>Provides macros that abstracts display communication interface calls (such as TI Drivers APIs) from the Display Controller driver</li>
+<li>Implemented from <a class="reference external" href="https://github.com/littlevgl/lv_drivers">LittlevGL&#8217;s display driver template</a>: lv_drv_conf_templ.h</li>
+</ul>
+</li>
+<li><strong>ti_lvgl_disp_interface.h/c</strong><ul>
+<li>Communication interface (SPI, I2C, Parallel) between display controller and host MCU</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="support.html" class="btn btn-neutral float-right" title="Support" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="usage.html" class="btn btn-neutral" title="Getting Started" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <a href="http://www.ti.com/corp/docs/legal/copyright.shtml">&copy; Copyright 1995-2019</a>, Texas Instruments Incorporated. All rights reserved. <br>
+      <a href="http://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="http://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="http://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="http://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+        });
+
+      var menuHeight = window.innerHeight;
+
+      var contentOffset = $(".wy-nav-content-wrap").offset();
+      var contentHeight = $(".wy-nav-content-wrap").height();
+      var contentBottom = contentOffset.top + contentHeight;
+
+      function setNavbarTop() {
+          var scrollTop = $(window).scrollTop();
+          var maxTop = scrollTop + menuHeight;
+
+          // If past the header
+          if (scrollTop > contentOffset.top && maxTop < contentBottom) {
+            stickyTop = scrollTop - contentOffset.top;
+          } else if (maxTop > contentBottom) {
+            stickyTop = scrollTop - contentOffset.top - (maxTop - contentBottom);
+          } else {
+            stickyTop = 0;
+          }
+
+          $(".wy-nav-side").css("top", stickyTop);
+      }
+
+      $(document).ready(function() {
+        setNavbarTop();
+        $(window).scroll(function () {
+          setNavbarTop();
+        });
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+<map id="lv_types.h" name="lv_types.h">
+<area shape="rect" id="node2" href="$lv__async_8h.html" title="lv_async.h" alt="" coords="49,80,139,107"/>
+<area shape="rect" id="node7" href="$lv__obj_8h.html" title="lv_obj.h" alt="" coords="240,80,313,107"/>
+<area shape="rect" id="node13" href="$lv__img__decoder_8h.html" title="lv_img_decoder.h" alt="" coords="715,80,851,107"/>
+<area shape="rect" id="node3" href="$lvgl_8h.html" title="lvgl.h" alt="" coords="170,304,229,331"/>
+<area shape="rect" id="node4" href="$ls013b7dh03_2lv__port__disp_8h.html" title="lv_port_disp.h" alt="" coords="5,379,119,405"/>
+<area shape="rect" id="node5" href="$ssd2119_2lv__port__disp_8h.html" title="lv_port_disp.h" alt="" coords="143,379,256,405"/>
+<area shape="rect" id="node6" href="$lv__port__indev_8h.html" title="lv_port_indev.h" alt="" coords="280,379,401,405"/>
+<area shape="rect" id="node8" href="$lv__group_8h.html" title="lv_group.h" alt="" coords="149,155,239,181"/>
+<area shape="rect" id="node10" href="$lv__indev_8h.html" title="lv_indev.h" alt="" coords="271,229,359,256"/>
+<area shape="rect" id="node11" href="$lv__refr_8h.html" title="lv_refr.h" alt="" coords="314,155,389,181"/>
+<area shape="rect" id="node12" href="$lv__disp_8h.html" title="lv_disp.h" alt="" coords="413,155,493,181"/>
+<area shape="rect" id="node9" href="$lv__theme_8h.html" title="lv_theme.h" alt="" coords="152,229,247,256"/>
+<area shape="rect" id="node14" href="$lv__img__cache_8h.html" title="lv_img_cache.h" alt="" coords="517,155,639,181"/>
+<area shape="rect" id="node16" href="$lv__draw_8h.html" title="lv_draw.h" alt="" coords="947,155,1031,181"/>
+<area shape="rect" id="node19" href="$lv__draw__img_8h.html" title="lv_draw_img.h" alt="" coords="1221,229,1338,256"/>
+<area shape="rect" id="node15" href="$lv__gc_8h.html" title="lv_gc.h" alt="" coords="536,229,604,256"/>
+<area shape="rect" id="node17" href="$lv__draw__rect_8h.html" title="lv_draw_rect.h" alt="" coords="629,229,746,256"/>
+<area shape="rect" id="node18" href="$lv__draw__label_8h.html" title="lv_draw_label.h" alt="" coords="769,229,893,256"/>
+<area shape="rect" id="node20" href="$lv__draw__triangle_8h.html" title="lv_draw_triangle.h" alt="" coords="917,229,1060,256"/>
+<area shape="rect" id="node21" href="$lv__draw__arc_8h.html" title="lv_draw_arc.h" alt="" coords="1085,229,1197,256"/>
+</map>

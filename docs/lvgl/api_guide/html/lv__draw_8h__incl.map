@@ -1,0 +1,19 @@
+<map id="lv_draw.h" name="lv_draw.h">
+<area shape="rect" id="node3" href="$lv__style_8h.html" title="../lv_core/lv_style.h" alt="" coords="386,229,534,256"/>
+<area shape="rect" id="node13" href="$lv__txt_8h.html" title="../lv_misc/lv_txt.h" alt="" coords="170,229,307,256"/>
+<area shape="rect" id="node14" href="$lv__img__decoder_8h.html" title="lv_img_decoder.h" alt="" coords="872,155,1008,181"/>
+<area shape="rect" id="node17" href="$lv__draw__basic_8h.html" title="lv_draw_basic.h" alt="" coords="571,229,698,256"/>
+<area shape="rect" id="node18" href="$lv__draw__rect_8h.html" title="lv_draw_rect.h" alt="" coords="629,80,747,107"/>
+<area shape="rect" id="node19" href="$lv__draw__label_8h.html" title="lv_draw_label.h" alt="" coords="770,80,894,107"/>
+<area shape="rect" id="node20" href="$lv__draw__img_8h.html" title="lv_draw_img.h" alt="" coords="919,80,1036,107"/>
+<area shape="rect" id="node21" href="$lv__draw__line_8h.html" title="lv_draw_line.h" alt="" coords="1061,80,1177,107"/>
+<area shape="rect" id="node22" href="$lv__draw__triangle_8h.html" title="lv_draw_triangle.h" alt="" coords="1201,80,1343,107"/>
+<area shape="rect" id="node23" href="$lv__draw__arc_8h.html" title="lv_draw_arc.h" alt="" coords="1368,80,1480,107"/>
+<area shape="rect" id="node5" href="$lv__font_8h.html" title="../lv_font/lv_font.h" alt="" coords="169,304,309,331"/>
+<area shape="rect" id="node9" href="$lv__color_8h.html" title="../lv_misc/lv_color.h" alt="" coords="733,304,883,331"/>
+<area shape="rect" id="node10" href="$lv__area_8h.html" title="../lv_misc/lv_area.h" alt="" coords="561,304,709,331"/>
+<area shape="rect" id="node12" href="$lv__anim_8h.html" title="../lv_misc/lv_anim.h" alt="" coords="384,304,536,331"/>
+<area shape="rect" id="node8" href="$lv__symbol__def_8h.html" title="lv_symbol_def.h" alt="" coords="93,379,221,405"/>
+<area shape="rect" id="node15" href="$lv__fs_8h.html" title="../lv_misc/lv_fs.h" alt="" coords="1060,304,1191,331"/>
+<area shape="rect" id="node16" href="$lv__types_8h.html" title="../lv_misc/lv_types.h" alt="" coords="729,229,884,256"/>
+</map>

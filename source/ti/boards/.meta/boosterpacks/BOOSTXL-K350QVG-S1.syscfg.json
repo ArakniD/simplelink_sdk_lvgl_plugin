@@ -1,0 +1,141 @@
+/*
+ * Copyright (c) 2018-2019, Texas Instruments Incorporated - http://www.ti.com
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ * *  Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ *
+ * *  Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * *  Neither the name of Texas Instruments Incorporated nor the names of
+ *    its contributors may be used to endorse or promote products derived
+ *    from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+ * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+ * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+ * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+ * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+ * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ *
+ */
+
+/*
+ *  ======== BOOSTXL-K350QVG-S1.syscfg.json ========
+ */
+
+{
+    "name": "BOOSTXL_K350QVG_S1", /* must be C identifier */
+    "displayName": "BOOSTXL-K350QVG-S1",
+    "headerType": "BoosterPack 40 pin",
+    "components": {
+        "KENTEC_LCD_DISPLAY" : {
+            "type": "KENTEC_LCD",
+            "displayName" : "Kentec LCD Display",
+            "subComponents": {
+                "LCD_SPI": {
+                    "displayName": "LCD SPI Bus",
+                    "definition"  : "/ti/boards/components/spiBus.json",
+                    "connections": {
+                        /* 7:  BoosterPack standard: SPI CLK */
+                        "SCLK"    : 7,
+                        /* 15: BoosterPack standard: SPI MOSI */
+                        "MOSI"   : 15,
+                        /* 14: BoosterPack standard: SPI MISO */
+                        "MISO"   : 14
+                    }
+                },
+                "LCD_SS": {
+                    "displayName": "LCD SPI Slave Select",
+                    "definition"  : "/ti/boards/components/spiSelect.json",
+                    "connections" : {
+                        "SS": 13
+                    }
+                },
+                "LCD_BACKLIGHT": {
+                    "isBus": false,
+                    "type": "GPIO",
+                    "displayName": "LCD Backlight",
+                    "signals": {
+                        "LCD_POWER": {"type": "DOUT", "connection": 40}
+                    }
+                },
+                "LCD_RESET": {
+                    "isBus": false,
+                    "type": "GPIO",
+                    "displayName": "LCD Reset",
+                    "signals": {
+                        "LCD_ENABLE": {"type": "DOUT", "connection": 32}
+                    }
+                },
+                "LCD_DC": {
+                    "isBus": false,
+                    "type": "GPIO",
+                    "displayName": "LCD Data/Command",
+                    "signals": {
+                        "LCD_ENABLE": {"type": "DOUT", "connection": 8}
+                    }
+                },
+                "TS_YP_AIN": {
+                    "type"       : "touchscreen-input",
+                    "displayName": "Touchscreen X-axis",
+                    "signals"    :
+                    {
+                        "analogInput": { "type": "AIN", "connection": 23 }
+                    }
+                },
+                "TS_XP_AIN": {
+                    "type"       : "touchscreen-input",
+                    "displayName": "Touchscreen Y-axis",
+                    "signals"    :
+                    {
+                        "analogInput": { "type": "AIN", "connection": 24 }
+                    }
+                },
+                "TS_YP": {
+                    "isBus": false,
+                    "type": "GPIO",
+                    "displayName": "Touchscreen Y+",
+                    "signals": {
+                        "TS_YP": {"type": "DOUT", "connection": 23 }
+                    }
+                },
+                "TS_XP": {
+                    "isBus": false,
+                    "type": "GPIO",
+                    "displayName": "Touchscreen X+",
+                    "signals": {
+                        "TS_YP": {"type": "DOUT", "connection": 24 }
+                    }
+                },
+                "TS_YN": {
+                    "isBus": false,
+                    "type": "GPIO",
+                    "displayName": "Touchscreen Y-",
+                    "signals": {
+                        "TS_YN": {"type": "DOUT", "connection": 11 }
+                    }
+                },
+                "TS_XN": {
+                    "isBus": false,
+                    "type": "GPIO",
+                    "displayName": "Touchscreen X-",
+                    "signals": {
+                        "TS_YP": {"type": "DOUT", "connection": 31 }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IAR Project Connection File -->
+
+<iarProjectConnection version="1.2" name="Sharp Simple Display" oneShot="true"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="IarProjectConnection_1.2.xsd">
+
+    <device>
+        <name>MSP432E401Y</name>
+    </device>
+
+    <asmIncludePath>
+        <path>$PROJ_DIR$</path>
+    </asmIncludePath>
+
+    <includePath>
+        <path>$PROJ_DIR$</path>
+        <path>$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source</path>
+        <path>$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/CMSIS/Include</path>
+        <path>$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source</path>
+        <path>$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party</path>
+        <path>$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl</path>
+        <path>$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/ti/posix/iar</path>
+    </includePath>
+
+    <defines>
+        <define>LV_CONF_INCLUDE_SIMPLE</define>
+    </defines>
+
+    <extraOptions>
+        <args>
+            <arg>-f$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/kernel/tirtos/builds/MSP_EXP432E401Y/release/iar/compiler.opt.defs</arg>
+            <arg>--debug</arg>
+            <arg>--silent</arg>
+            <arg>-e</arg>
+            <arg>--aeabi</arg>
+            <arg>--thumb</arg>
+            <arg>--diag_suppress=Pa050</arg>
+        </args>
+    </extraOptions>
+
+    <linkerFile>
+        <override>true</override>
+        <path>$PROJ_DIR$/MSP_EXP432E401Y_TIRTOS.icf</path>
+    </linkerFile>
+
+    <linkerExtraOptions>
+        <args>
+            <arg>$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/ti/display/lib/display.arm4f</arg>
+            <arg>$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/ti/grlib/lib/iar/m4f/grlib.a</arg>
+            <arg>$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/spiffs/lib/iar/m4f/spiffs.a</arg>
+            <arg>$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/ti/drivers/lib/drivers_msp432e4.arm4f</arg>
+            <arg>$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/fatfs/lib/iar/m4f/fatfs.a</arg>
+            <arg>$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/kernel/tirtos/packages/ti/dpl/lib/dpl_msp432e4.arm4f</arg>
+            <arg>-f$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/kernel/tirtos/builds/MSP_EXP432E401Y/release/iar/linker.cmd</arg>
+            <arg>$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/ti/devices/msp432e4/driverlib/lib/iar/m4f/msp432e4_driverlib.a</arg>
+            <arg>--silent</arg>
+            <arg>--cpu=Cortex-M4F</arg>
+        </args>
+    </linkerExtraOptions>
+
+    <customBuildTools>
+    </customBuildTools>
+
+    <heaps>
+        <heap> <!-- If omitted, id="0" -->
+            <size>0</size>
+        </heap>
+        <heap id="1">
+            <size>0</size>
+        </heap>
+    </heaps>
+    <stacks>
+        <stack> <!-- If omitted, id="0" -->
+            <size>512</size>
+        </stack>
+    </stacks>
+
+    <preBuild>
+        <command>iarbuild.exe $SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/kernel/tirtos/builds/MSP_EXP432E401Y/release/iar/tirtos_builds_MSP_EXP432E401Y_release.ewp Debug -log all</command>
+    </preBuild>
+
+    <files>
+        <path copyTo="$PROJ_DIR$/sharpsimpledisplay.c">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/examples/rtos/MSP_EXP432E401Y/lvgl/sharpsimpledisplay/sharpsimpledisplay.c</path>
+        <path copyTo="$PROJ_DIR$/ti_logo_96_indexed_2colors.c">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/examples/rtos/MSP_EXP432E401Y/lvgl/sharpsimpledisplay/ti_logo_96_indexed_2colors.c</path>
+        <path copyTo="$PROJ_DIR$/README.md">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/examples/rtos/MSP_EXP432E401Y/lvgl/sharpsimpledisplay/README.md</path>
+        <path copyTo="$PROJ_DIR$/README.html">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/examples/rtos/MSP_EXP432E401Y/lvgl/sharpsimpledisplay/README.html</path>
+        <path copyTo="$PROJ_DIR$/lv_conf.h">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/examples/rtos/MSP_EXP432E401Y/lvgl/sharpsimpledisplay/lv_conf.h</path>
+        <path copyTo="$PROJ_DIR$/lv_drv_conf.h">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/examples/rtos/MSP_EXP432E401Y/lvgl/sharpsimpledisplay/lv_drv_conf.h</path>
+        <path copyTo="$PROJ_DIR$/ti_lvgl_ls013b7dh03_disp.c">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/examples/rtos/MSP_EXP432E401Y/lvgl/sharpsimpledisplay/ti_lvgl_ls013b7dh03_disp.c</path>
+        <path copyTo="$PROJ_DIR$/lv_port_disp.h">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/examples/rtos/MSP_EXP432E401Y/lvgl/sharpsimpledisplay/lv_port_disp.h</path>
+        <path copyTo="$PROJ_DIR$/ti_lvgl_disp_interface.c">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/examples/rtos/MSP_EXP432E401Y/lvgl/sharpsimpledisplay/ti_lvgl_disp_interface.c</path>
+        <path copyTo="$PROJ_DIR$/ti_lvgl_disp_interface.h">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/examples/rtos/MSP_EXP432E401Y/lvgl/sharpsimpledisplay/ti_lvgl_disp_interface.h</path>
+        <path copyTo="$PROJ_DIR$/overview.rov.json">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/examples/rtos/MSP_EXP432E401Y/lvgl/sharpsimpledisplay/overview.rov.json</path>
+        <path copyTo="$PROJ_DIR$/main_tirtos.c">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/examples/rtos/MSP_EXP432E401Y/lvgl/sharpsimpledisplay/tirtos/main_tirtos.c</path>
+        <path reference="$PROJ_DIR$/Board.html">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/ti/boards/MSP_EXP432E401Y/Board.html</path>
+        <path copyTo="$PROJ_DIR$/Board.h">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/examples/rtos/MSP_EXP432E401Y/lvgl/sharpsimpledisplay/Board.h</path>
+        <path copyTo="$PROJ_DIR$/MSP_EXP432E401Y.c">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/examples/rtos/MSP_EXP432E401Y/lvgl/sharpsimpledisplay/MSP_EXP432E401Y.c</path>
+        <path copyTo="$PROJ_DIR$/MSP_EXP432E401Y.h">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/examples/rtos/MSP_EXP432E401Y/lvgl/sharpsimpledisplay/MSP_EXP432E401Y.h</path>
+        <path copyTo="$PROJ_DIR$/MSP_EXP432E401Y_TIRTOS.icf">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/examples/rtos/MSP_EXP432E401Y/lvgl/sharpsimpledisplay/tirtos/iar/MSP_EXP432E401Y_TIRTOS.icf</path>
+        <group name="lvgl" build="true">
+            <path reference="$PROJ_DIR$/lvgl/LICENCE.txt">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/LICENCE.txt</path>
+            <path reference="$PROJ_DIR$/lvgl/README.md">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/README.md</path>
+            <path reference="$PROJ_DIR$/lvgl/lvgl.h">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/lvgl.h</path>
+            <path reference="$PROJ_DIR$/lvgl/lvgl.mk">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/lvgl.mk</path>
+        </group>
+        <group name="lvgl/src" build="true">
+            <path reference="$PROJ_DIR$/lvgl/src/lv_conf_checker.h">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_conf_checker.h</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_version.h">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_version.h</path>
+        </group>
+        <group name="lvgl/src/lv_core" build="true">
+            <path reference="$PROJ_DIR$/lvgl/src/lv_core/lv_core.mk">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_core/lv_core.mk</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_core/lv_disp.c">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_core/lv_disp.c</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_core/lv_disp.h">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_core/lv_disp.h</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_core/lv_group.c">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_core/lv_group.c</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_core/lv_group.h">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_core/lv_group.h</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_core/lv_indev.c">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_core/lv_indev.c</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_core/lv_indev.h">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_core/lv_indev.h</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_core/lv_obj.c">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_core/lv_obj.c</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_core/lv_obj.h">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_core/lv_obj.h</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_core/lv_refr.c">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_core/lv_refr.c</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_core/lv_refr.h">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_core/lv_refr.h</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_core/lv_style.c">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_core/lv_style.c</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_core/lv_style.h">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_core/lv_style.h</path>
+        </group>
+        <group name="lvgl/src/lv_draw" build="true">
+            <path reference="$PROJ_DIR$/lvgl/src/lv_draw/lv_draw.c">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_draw/lv_draw.c</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_draw/lv_draw.h">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_draw/lv_draw.h</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_draw/lv_draw.mk">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_draw/lv_draw.mk</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_draw/lv_draw_arc.c">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_draw/lv_draw_arc.c</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_draw/lv_draw_arc.h">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_draw/lv_draw_arc.h</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_draw/lv_draw_basic.c">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_draw/lv_draw_basic.c</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_draw/lv_draw_basic.h">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_draw/lv_draw_basic.h</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_draw/lv_draw_img.c">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_draw/lv_draw_img.c</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_draw/lv_draw_img.h">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_draw/lv_draw_img.h</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_draw/lv_draw_label.c">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_draw/lv_draw_label.c</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_draw/lv_draw_label.h">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_draw/lv_draw_label.h</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_draw/lv_draw_line.c">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_draw/lv_draw_line.c</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_draw/lv_draw_line.h">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_draw/lv_draw_line.h</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_draw/lv_draw_rect.c">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_draw/lv_draw_rect.c</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_draw/lv_draw_rect.h">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_draw/lv_draw_rect.h</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_draw/lv_draw_triangle.c">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_draw/lv_draw_triangle.c</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_draw/lv_draw_triangle.h">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_draw/lv_draw_triangle.h</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_draw/lv_img_cache.c">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_draw/lv_img_cache.c</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_draw/lv_img_cache.h">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_draw/lv_img_cache.h</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_draw/lv_img_decoder.c">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_draw/lv_img_decoder.c</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_draw/lv_img_decoder.h">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_draw/lv_img_decoder.h</path>
+        </group>
+        <group name="lvgl/src/lv_font" build="true">
+            <path reference="$PROJ_DIR$/lvgl/src/lv_font/lv_font.c">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_font/lv_font.c</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_font/lv_font.h">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_font/lv_font.h</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_font/lv_font.mk">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_font/lv_font.mk</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_font/lv_font_fmt_txt.c">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_font/lv_font_fmt_txt.c</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_font/lv_font_fmt_txt.h">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_font/lv_font_fmt_txt.h</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_font/lv_font_roboto_12.c">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_font/lv_font_roboto_12.c</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_font/lv_font_roboto_16.c">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_font/lv_font_roboto_16.c</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_font/lv_font_roboto_22.c">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_font/lv_font_roboto_22.c</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_font/lv_font_roboto_28.c">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_font/lv_font_roboto_28.c</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_font/lv_font_unscii_8.c">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_font/lv_font_unscii_8.c</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_font/lv_symbol_def.h">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_font/lv_symbol_def.h</path>
+        </group>
+        <group name="lvgl/src/lv_hal" build="true">
+            <path reference="$PROJ_DIR$/lvgl/src/lv_hal/lv_hal.h">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_hal/lv_hal.h</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_hal/lv_hal.mk">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_hal/lv_hal.mk</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_hal/lv_hal_disp.c">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_hal/lv_hal_disp.c</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_hal/lv_hal_disp.h">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_hal/lv_hal_disp.h</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_hal/lv_hal_indev.c">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_hal/lv_hal_indev.c</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_hal/lv_hal_indev.h">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_hal/lv_hal_indev.h</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_hal/lv_hal_tick.c">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_hal/lv_hal_tick.c</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_hal/lv_hal_tick.h">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_hal/lv_hal_tick.h</path>
+        </group>
+        <group name="lvgl/src/lv_misc" build="true">
+            <path reference="$PROJ_DIR$/lvgl/src/lv_misc/lv_anim.c">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_misc/lv_anim.c</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_misc/lv_anim.h">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_misc/lv_anim.h</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_misc/lv_area.c">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_misc/lv_area.c</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_misc/lv_area.h">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_misc/lv_area.h</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_misc/lv_async.c">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_misc/lv_async.c</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_misc/lv_async.h">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_misc/lv_async.h</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_misc/lv_circ.c">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_misc/lv_circ.c</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_misc/lv_circ.h">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_misc/lv_circ.h</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_misc/lv_color.c">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_misc/lv_color.c</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_misc/lv_color.h">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_misc/lv_color.h</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_misc/lv_fs.c">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_misc/lv_fs.c</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_misc/lv_fs.h">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_misc/lv_fs.h</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_misc/lv_gc.c">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_misc/lv_gc.c</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_misc/lv_gc.h">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_misc/lv_gc.h</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_misc/lv_ll.c">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_misc/lv_ll.c</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_misc/lv_ll.h">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_misc/lv_ll.h</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_misc/lv_log.c">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_misc/lv_log.c</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_misc/lv_log.h">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_misc/lv_log.h</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_misc/lv_math.c">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_misc/lv_math.c</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_misc/lv_math.h">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_misc/lv_math.h</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_misc/lv_mem.c">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_misc/lv_mem.c</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_misc/lv_mem.h">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_misc/lv_mem.h</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_misc/lv_misc.mk">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_misc/lv_misc.mk</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_misc/lv_task.c">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_misc/lv_task.c</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_misc/lv_task.h">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_misc/lv_task.h</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_misc/lv_templ.c">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_misc/lv_templ.c</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_misc/lv_templ.h">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_misc/lv_templ.h</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_misc/lv_txt.c">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_misc/lv_txt.c</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_misc/lv_txt.h">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_misc/lv_txt.h</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_misc/lv_types.h">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_misc/lv_types.h</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_misc/lv_utils.c">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_misc/lv_utils.c</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_misc/lv_utils.h">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_misc/lv_utils.h</path>
+        </group>
+        <group name="lvgl/src/lv_objx" build="true">
+            <path reference="$PROJ_DIR$/lvgl/src/lv_objx/lv_arc.c">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_objx/lv_arc.c</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_objx/lv_arc.h">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_objx/lv_arc.h</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_objx/lv_bar.c">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_objx/lv_bar.c</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_objx/lv_bar.h">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_objx/lv_bar.h</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_objx/lv_btn.c">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_objx/lv_btn.c</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_objx/lv_btn.h">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_objx/lv_btn.h</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_objx/lv_btnm.c">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_objx/lv_btnm.c</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_objx/lv_btnm.h">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_objx/lv_btnm.h</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_objx/lv_calendar.c">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_objx/lv_calendar.c</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_objx/lv_calendar.h">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_objx/lv_calendar.h</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_objx/lv_canvas.c">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_objx/lv_canvas.c</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_objx/lv_canvas.h">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_objx/lv_canvas.h</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_objx/lv_cb.c">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_objx/lv_cb.c</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_objx/lv_cb.h">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_objx/lv_cb.h</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_objx/lv_chart.c">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_objx/lv_chart.c</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_objx/lv_chart.h">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_objx/lv_chart.h</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_objx/lv_cont.c">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_objx/lv_cont.c</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_objx/lv_cont.h">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_objx/lv_cont.h</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_objx/lv_ddlist.c">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_objx/lv_ddlist.c</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_objx/lv_ddlist.h">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_objx/lv_ddlist.h</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_objx/lv_gauge.c">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_objx/lv_gauge.c</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_objx/lv_gauge.h">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_objx/lv_gauge.h</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_objx/lv_img.c">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_objx/lv_img.c</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_objx/lv_img.h">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_objx/lv_img.h</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_objx/lv_imgbtn.c">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_objx/lv_imgbtn.c</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_objx/lv_imgbtn.h">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_objx/lv_imgbtn.h</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_objx/lv_kb.c">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_objx/lv_kb.c</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_objx/lv_kb.h">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_objx/lv_kb.h</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_objx/lv_label.c">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_objx/lv_label.c</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_objx/lv_label.h">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_objx/lv_label.h</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_objx/lv_led.c">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_objx/lv_led.c</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_objx/lv_led.h">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_objx/lv_led.h</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_objx/lv_line.c">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_objx/lv_line.c</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_objx/lv_line.h">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_objx/lv_line.h</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_objx/lv_list.c">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_objx/lv_list.c</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_objx/lv_list.h">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_objx/lv_list.h</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_objx/lv_lmeter.c">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_objx/lv_lmeter.c</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_objx/lv_lmeter.h">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_objx/lv_lmeter.h</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_objx/lv_mbox.c">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_objx/lv_mbox.c</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_objx/lv_mbox.h">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_objx/lv_mbox.h</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_objx/lv_objx.mk">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_objx/lv_objx.mk</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_objx/lv_objx_templ.c">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_objx/lv_objx_templ.c</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_objx/lv_objx_templ.h">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_objx/lv_objx_templ.h</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_objx/lv_page.c">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_objx/lv_page.c</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_objx/lv_page.h">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_objx/lv_page.h</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_objx/lv_preload.c">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_objx/lv_preload.c</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_objx/lv_preload.h">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_objx/lv_preload.h</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_objx/lv_roller.c">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_objx/lv_roller.c</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_objx/lv_roller.h">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_objx/lv_roller.h</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_objx/lv_slider.c">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_objx/lv_slider.c</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_objx/lv_slider.h">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_objx/lv_slider.h</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_objx/lv_spinbox.c">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_objx/lv_spinbox.c</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_objx/lv_spinbox.h">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_objx/lv_spinbox.h</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_objx/lv_sw.c">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_objx/lv_sw.c</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_objx/lv_sw.h">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_objx/lv_sw.h</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_objx/lv_ta.c">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_objx/lv_ta.c</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_objx/lv_ta.h">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_objx/lv_ta.h</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_objx/lv_table.c">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_objx/lv_table.c</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_objx/lv_table.h">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_objx/lv_table.h</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_objx/lv_tabview.c">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_objx/lv_tabview.c</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_objx/lv_tabview.h">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_objx/lv_tabview.h</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_objx/lv_tileview.c">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_objx/lv_tileview.c</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_objx/lv_tileview.h">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_objx/lv_tileview.h</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_objx/lv_win.c">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_objx/lv_win.c</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_objx/lv_win.h">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_objx/lv_win.h</path>
+        </group>
+        <group name="lvgl/src/lv_themes" build="true">
+            <path reference="$PROJ_DIR$/lvgl/src/lv_themes/lv_theme.c">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_themes/lv_theme.c</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_themes/lv_theme.h">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_themes/lv_theme.h</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_themes/lv_theme_alien.c">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_themes/lv_theme_alien.c</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_themes/lv_theme_alien.h">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_themes/lv_theme_alien.h</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_themes/lv_theme_default.c">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_themes/lv_theme_default.c</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_themes/lv_theme_default.h">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_themes/lv_theme_default.h</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_themes/lv_theme_material.c">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_themes/lv_theme_material.c</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_themes/lv_theme_material.h">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_themes/lv_theme_material.h</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_themes/lv_theme_mono.c">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_themes/lv_theme_mono.c</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_themes/lv_theme_mono.h">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_themes/lv_theme_mono.h</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_themes/lv_theme_nemo.c">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_themes/lv_theme_nemo.c</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_themes/lv_theme_nemo.h">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_themes/lv_theme_nemo.h</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_themes/lv_theme_night.c">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_themes/lv_theme_night.c</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_themes/lv_theme_night.h">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_themes/lv_theme_night.h</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_themes/lv_theme_templ.c">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_themes/lv_theme_templ.c</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_themes/lv_theme_templ.h">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_themes/lv_theme_templ.h</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_themes/lv_theme_zen.c">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_themes/lv_theme_zen.c</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_themes/lv_theme_zen.h">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_themes/lv_theme_zen.h</path>
+            <path reference="$PROJ_DIR$/lvgl/src/lv_themes/lv_themes.mk">$SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR$/source/third_party/lvgl/src/lv_themes/lv_themes.mk</path>
+        </group>
+    </files>
+</iarProjectConnection>

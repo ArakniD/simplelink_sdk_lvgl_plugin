@@ -1,0 +1,299 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Introduction &mdash; SimpleLink SDK LVGL Plugin  documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="SimpleLink SDK LVGL Plugin  documentation" href="../index.html"/>
+        <link rel="next" title="Getting Started" href="usage.html"/>
+        <link rel="prev" title="SimpleLink SDK LVGL Plugin" href="index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+  <header id="tiHeader">
+    <div class="top">
+      <ul>
+        <li id="top_logo">
+          <a href="http://www.ti.com">
+            <img src="../_static/img/ti_logo.png"/>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="nav"></div>
+  </header>
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> SimpleLink SDK LVGL Plugin
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#plugin-architecture-general-overview">Plugin Architecture / General Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#file-structure">File Structure</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="other.html">Other Usage Details</a></li>
+<li class="toctree-l1"><a class="reference internal" href="support.html">Support</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">SimpleLink SDK LVGL Plugin</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Introduction</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+<p>The SimpleLink™ SDK LVGL Plugin is a companion software package that enables advanced graphics capabilities on various <a class="reference external" href="http://www.ti.com/wireless-connectivity/simplelink-solutions/overview/overview.html">SimpleLink™ MCU platforms</a> by integrating the free and open-source 3rd party library, <a class="reference external" href="https://littlevgl.com">LittlevGL</a>. The Plugin provides example hardware abstraction layers and display drivers that allow developers to start building embedded GUIs on SimpleLink platforms with ease on reference hardware.</p>
+<p>SimpleLink SDK Plugins are designed to work in tandem to the microprocessor specific SDK. This plugin is designed to work alongside the <a class="reference external" href="http://www.ti.com/tool/download/SIMPLELINK-MSP432-SDK">SimpleLink MSP432P4 SDK</a>, <a class="reference external" href="http://www.ti.com/tool/download/SIMPLELINK-MSP432E4-SDK">SimpleLink MSP432E4 SDK</a>, <a class="reference external" href="http://www.ti.com/tool/download/SIMPLELINK-CC13X2-26X2-SDK">SimpleLink CC13x2 and CC26x2 SDK</a>, and <a class="reference external" href="http://www.ti.com/tool/download/SIMPLELINK-CC32XX-SDK">SimpleLink CC32xx SDK</a>. It relies heavily on several core elements within these SDKs. Without a prior installation of the SimpleLink SDK, the SimpleLink SDK LVGL Plugin will not work.</p>
+<div class="section" id="plugin-architecture-general-overview">
+<h2>Plugin Architecture / General Overview<a class="headerlink" href="#plugin-architecture-general-overview" title="Permalink to this headline">¶</a></h2>
+<p>All of the code examples written for this software package leverage a combination of various host controller LaunchPads and display BoosterPacks. The supported host microcontroller LaunchPad configurations are listed below:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://www.ti.com/tool/msp-exp432p401r">MSP-EXP432P401R</a></li>
+<li><a class="reference external" href="http://www.ti.com/tool/msp-exp432p4111">MSP-EXP432P4111</a></li>
+<li><a class="reference external" href="http://www.ti.com/tool/msp-exp432e401y">MSP-EXP432E401Y</a></li>
+<li><a class="reference external" href="http://www.ti.com/tool/LAUNCHXL-CC26X2R1">LAUNCHXL-CC26X2R1</a></li>
+<li><a class="reference external" href="http://www.ti.com/tool/LAUNCHXL-CC1312R1">LAUNCHXL-CC1312R1</a></li>
+<li><a class="reference external" href="http://www.ti.com/tool/LAUNCHXL-CC1352P">LAUNCHXL-CC1352P1</a></li>
+<li><a class="reference external" href="http://www.ti.com/tool/LAUNCHXL-CC1352P">LAUNCHXL-CC1352P-2</a></li>
+<li><a class="reference external" href="http://www.ti.com/tool/LAUNCHXL-CC1352R1">LAUNCHXL-CC1352R1</a></li>
+<li><a class="reference external" href="http://www.ti.com/tool/CC3220S-LAUNCHXL">CC3220S-LAUNCHXL</a></li>
+<li><a class="reference external" href="http://www.ti.com/tool/CC3220SF-LAUNCHXL">CC3220SF-LAUNCHXL</a></li>
+<li><a class="reference external" href="http://www.ti.com/tool/LAUNCHXL-CC3235S">LAUNCHXL-CC3235S</a></li>
+<li><a class="reference external" href="http://www.ti.com/tool/LAUNCHXL-CC3235SF">LAUNCHXL-CC3235SF</a></li>
+</ul>
+<p>The display BoosterPacks that can be used in this plugin are listed below:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://www.ti.com/tool/BOOSTXL-SHARP128">Sharp® 128x128 Memory LCD and microSD Card TI BoosterPack</a></li>
+<li><a class="reference external" href="http://www.ti.com/tool/BOOSTXL-K350QVG-S1">Kentec QVGA Display BoosterPack</a></li>
+</ul>
+<p>The physical interface between the host microcontroller and both display BoosterPacks is a simple SPI connection. The physical hardware specification and interworkings are explained in detail in the <a class="reference external" href="http://www.ti.com/lit/pdf/slau786">BOOSTXL-SHARP128 BoosterPack User&#8217;s Guide</a> and <a class="reference external" href="http://www.ti.com/lit/pdf/slau601">BOOSTXL-K350QVG-S1 BoosterPack User&#8217;s Guide</a>. It is important to note that while the default pin configurations used in the example projects in this plugin package are mapped to the LaunchPad and BoosterPack pins, they are fully reconfigurable to match the end application requirements.</p>
+</div>
+<div class="section" id="file-structure">
+<h2>File Structure<a class="headerlink" href="#file-structure" title="Permalink to this headline">¶</a></h2>
+<p>The folder structure for the SimpleLink SDK LVGL Plugin is made to compliment the standard folder structure that the microcontroller specific SDK adheres to. From the root directory, the following folders are available:</p>
+<ul class="simple">
+<li><strong>.metadata/</strong> - Internal folder for product integration into Code Composer Studio. You do not have to edit any files in this folder.</li>
+<li><strong>docs/</strong> - Contains all documentation related to the SDK plugin</li>
+<li><strong>examples/</strong> - Contains all of the <a class="reference external" href="#code-examples">code examples</a> and their IDE project files</li>
+<li><strong>source/</strong> - Contains generic/reusable code that can be imported into end applications</li>
+</ul>
+<p>The <em>source/</em> folder contains the code that is likely to end up seeing its way into an end application. Within there is the following folders:</p>
+<ul class="simple">
+<li><strong>ti/</strong> - TI provided collateral</li>
+<li><strong>third_party/</strong> - Third party provided collateral</li>
+</ul>
+<p>The <em>ti/</em> folder contains the bulk to the TI provided collateral to interact with and control the BOOSTXL-SHARP129 or BOOSTXL-K350QVG-S1 display BoosterPacks. This folder is structured as follows:</p>
+<ul class="simple">
+<li><strong>lvgl/drivers</strong> - Contains the driver implementation for communication between the host MCU and the display controllers</li>
+<li><strong>boards/.meta</strong> - Internal folder for product integration into SysConfig. You do not have to edit any files in this folder.</li>
+</ul>
+<p>The entirety of code provided by TI is provided as an open source BSD license and generally include both prebuilt static libraries for each supported IDE as well as full source code. The <em>ota</em> folder does not contain prebuilt libraries as much of the ota implementation is dependent on end user requirements and parameters.</p>
+<p>The <em>third_party/</em> folder contains the <a class="reference external" href="https://github.com/littlevgl/lvgl">LittlevGL</a> library that provides the core graphics library to create embedded GUI.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="usage.html" class="btn btn-neutral float-right" title="Getting Started" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="SimpleLink SDK LVGL Plugin" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <a href="http://www.ti.com/corp/docs/legal/copyright.shtml">&copy; Copyright 1995-2019</a>, Texas Instruments Incorporated. All rights reserved. <br>
+      <a href="http://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="http://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="http://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="http://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+        });
+
+      var menuHeight = window.innerHeight;
+
+      var contentOffset = $(".wy-nav-content-wrap").offset();
+      var contentHeight = $(".wy-nav-content-wrap").height();
+      var contentBottom = contentOffset.top + contentHeight;
+
+      function setNavbarTop() {
+          var scrollTop = $(window).scrollTop();
+          var maxTop = scrollTop + menuHeight;
+
+          // If past the header
+          if (scrollTop > contentOffset.top && maxTop < contentBottom) {
+            stickyTop = scrollTop - contentOffset.top;
+          } else if (maxTop > contentBottom) {
+            stickyTop = scrollTop - contentOffset.top - (maxTop - contentBottom);
+          } else {
+            stickyTop = 0;
+          }
+
+          $(".wy-nav-side").css("top", stickyTop);
+      }
+
+      $(document).ready(function() {
+        setNavbarTop();
+        $(window).scroll(function () {
+          setNavbarTop();
+        });
+      });
+  </script>
+   
+
+</body>
+</html>

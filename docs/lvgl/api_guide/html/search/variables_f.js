@@ -1,0 +1,19 @@
+var searchData=
+[
+  ['radius',['radius',['../structlv__style__t.html#a4562ec9b4de4174dce2d8e6644ae02bf',1,'lv_style_t']]],
+  ['range_5flength',['range_length',['../structlv__font__fmt__txt__cmap__t.html#a27fc43146e0f7c451a2396e738238d09',1,'lv_font_fmt_txt_cmap_t']]],
+  ['range_5fstart',['range_start',['../structlv__font__fmt__txt__cmap__t.html#a6e07da091a4aa509c10fcedafe423868',1,'lv_font_fmt_txt_cmap_t']]],
+  ['read_5fcb',['read_cb',['../struct__lv__indev__drv__t.html#a374b71d88ad8e82113d9dd6b3caa41cd',1,'_lv_indev_drv_t']]],
+  ['read_5fline_5fcb',['read_line_cb',['../struct__lv__img__decoder.html#ac25eadad12cb1b7b544a559349d7a160',1,'_lv_img_decoder']]],
+  ['read_5ftask',['read_task',['../struct__lv__indev__drv__t.html#a53b69f2e630f9cef35f27506d19ebf25',1,'_lv_indev_drv_t']]],
+  ['red',['red',['../unionlv__color1__t.html#a43b5e095f8632b825693462b85b22132',1,'lv_color1_t::red()'],['../unionlv__color8__t.html#abed658f0eaf8cee7278869ad88246d68',1,'lv_color8_t::red()'],['../unionlv__color16__t.html#a0040e16563df0dd2d1f052e8cac9a980',1,'lv_color16_t::red()'],['../unionlv__color32__t.html#a7e62d507ce57ce35236017591fab3224',1,'lv_color32_t::red()']]],
+  ['refr_5ftask',['refr_task',['../struct__disp__t.html#a643fda9b299c7dae5e3dd86415182140',1,'_disp_t']]],
+  ['reserved',['reserved',['../struct__lv__obj__t.html#a98f692134136e4618ac4b1a9147245e6',1,'_lv_obj_t::reserved()'],['../structlv__img__header__t.html#a7cf6525f2cb39346f5438973c489bf89',1,'lv_img_header_t::reserved()']]],
+  ['reset_5fquery',['reset_query',['../struct__lv__indev__proc__t.html#ab7a4b61acd0befd72fd772d2e51704f5',1,'_lv_indev_proc_t']]],
+  ['right',['right',['../structlv__style__t.html#a184a0370ae7a1dd998dbafba3c2bc5af',1,'lv_style_t']]],
+  ['right_5fclass_5fcnt',['right_class_cnt',['../structlv__font__fmt__txt__kern__classes__t.html#a23834cf39f7005d7bb0559ecda674bd0',1,'lv_font_fmt_txt_kern_classes_t']]],
+  ['right_5fclass_5fmapping',['right_class_mapping',['../structlv__font__fmt__txt__kern__classes__t.html#a13baa912e5720e31ae7761a845ab94f3',1,'lv_font_fmt_txt_kern_classes_t']]],
+  ['rotated',['rotated',['../struct__disp__drv__t.html#a29a3cccc7f814ae9d77bb2e4fea536f7',1,'_disp_drv_t']]],
+  ['rounded',['rounded',['../structlv__style__t.html#aaf306fbee4215629db8ff5fb6809cf1a',1,'lv_style_t']]],
+  ['rounder_5fcb',['rounder_cb',['../struct__disp__drv__t.html#a1a012c9cb3884a9e960747e55d502629',1,'_disp_drv_t']]]
+];

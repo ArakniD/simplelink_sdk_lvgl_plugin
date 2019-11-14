@@ -1,0 +1,24 @@
+[
+    {
+        "rootMacroName": "COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR",
+        "compilerIncludePath": [],
+        "compilerSymbols": [],
+        "linkerSearchPath": [],
+        "properties": {
+            "rtsc.repoMacroName": "COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR_REPOS",
+            "rtsc.repositories": [
+                "source",
+                "kernel/tirtos/packages"
+            ],
+            "rtsc.platformMappingsFile": "./kernel/tirtos/etc/platforms.json",
+            "rtsc.targetMappingsFile": "./kernel/tirtos/etc/targets.json"
+        },
+        "helpTocs": [
+            ".metadata/.ccs/toc.xml",
+            "docs/lvgl/api_guide/html/toc.xml"
+        ],
+        "docs": [
+            "docs/lvgl/api_guide/html"
+        ]
+    }
+]

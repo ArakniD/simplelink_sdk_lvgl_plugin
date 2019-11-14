@@ -1,0 +1,55 @@
+Introduction
+============
+
+The SimpleLink™ SDK LVGL Plugin is a companion software package that enables advanced graphics capabilities on various `SimpleLink™ MCU platforms <http://www.ti.com/wireless-connectivity/simplelink-solutions/overview/overview.html>`__ by integrating the free and open-source 3rd party library, `LittlevGL <https://littlevgl.com>`__. The Plugin provides example hardware abstraction layers and display drivers that allow developers to start building embedded GUIs on SimpleLink platforms with ease on reference hardware.
+
+SimpleLink SDK Plugins are designed to work in tandem to the microprocessor specific SDK. This plugin is designed to work alongside the `SimpleLink MSP432P4 SDK <http://www.ti.com/tool/download/SIMPLELINK-MSP432-SDK>`__, `SimpleLink MSP432E4 SDK <http://www.ti.com/tool/download/SIMPLELINK-MSP432E4-SDK>`__, `SimpleLink CC13x2 and CC26x2 SDK <http://www.ti.com/tool/download/SIMPLELINK-CC13X2-26X2-SDK>`__, and `SimpleLink CC32xx SDK <http://www.ti.com/tool/download/SIMPLELINK-CC32XX-SDK>`__. It relies heavily on several core elements within these SDKs. Without a prior installation of the SimpleLink SDK, the SimpleLink SDK LVGL Plugin will not work.
+
+Plugin Architecture / General Overview
+--------------------------------------
+
+All of the code examples written for this software package leverage a combination of various host controller LaunchPads and display BoosterPacks. The supported host microcontroller LaunchPad configurations are listed below:
+
+-  `MSP-EXP432P401R <http://www.ti.com/tool/msp-exp432p401r>`__
+-  `MSP-EXP432P4111 <http://www.ti.com/tool/msp-exp432p4111>`__
+-  `MSP-EXP432E401Y <http://www.ti.com/tool/msp-exp432e401y>`__
+-  `LAUNCHXL-CC26X2R1 <http://www.ti.com/tool/LAUNCHXL-CC26X2R1>`__
+-  `LAUNCHXL-CC1312R1 <http://www.ti.com/tool/LAUNCHXL-CC1312R1>`__
+-  `LAUNCHXL-CC1352P1 <http://www.ti.com/tool/LAUNCHXL-CC1352P>`__
+-  `LAUNCHXL-CC1352P-2 <http://www.ti.com/tool/LAUNCHXL-CC1352P>`__
+-  `LAUNCHXL-CC1352R1 <http://www.ti.com/tool/LAUNCHXL-CC1352R1>`__
+-  `CC3220S-LAUNCHXL <http://www.ti.com/tool/CC3220S-LAUNCHXL>`__
+-  `CC3220SF-LAUNCHXL <http://www.ti.com/tool/CC3220SF-LAUNCHXL>`__
+-  `LAUNCHXL-CC3235S <http://www.ti.com/tool/LAUNCHXL-CC3235S>`__
+-  `LAUNCHXL-CC3235SF <http://www.ti.com/tool/LAUNCHXL-CC3235SF>`__
+
+The display BoosterPacks that can be used in this plugin are listed below:
+
+-  `Sharp® 128x128 Memory LCD and microSD Card TI BoosterPack <http://www.ti.com/tool/BOOSTXL-SHARP128>`__
+-  `Kentec QVGA Display BoosterPack <http://www.ti.com/tool/BOOSTXL-K350QVG-S1>`__
+
+The physical interface between the host microcontroller and both display BoosterPacks is a simple SPI connection. The physical hardware specification and interworkings are explained in detail in the `BOOSTXL-SHARP128 BoosterPack User's Guide <http://www.ti.com/lit/pdf/slau786>`__ and `BOOSTXL-K350QVG-S1 BoosterPack User's Guide <http://www.ti.com/lit/pdf/slau601>`__. It is important to note that while the default pin configurations used in the example projects in this plugin package are mapped to the LaunchPad and BoosterPack pins, they are fully reconfigurable to match the end application requirements.
+
+File Structure
+--------------
+
+The folder structure for the SimpleLink SDK LVGL Plugin is made to compliment the standard folder structure that the microcontroller specific SDK adheres to. From the root directory, the following folders are available:
+
+-  **.metadata/** - Internal folder for product integration into Code Composer Studio. You do not have to edit any files in this folder.
+-  **docs/** - Contains all documentation related to the SDK plugin
+-  **examples/** - Contains all of the `code examples <#code-examples>`__ and their IDE project files
+-  **source/** - Contains generic/reusable code that can be imported into end applications
+
+The *source/* folder contains the code that is likely to end up seeing its way into an end application. Within there is the following folders:
+
+-  **ti/** - TI provided collateral
+-  **third\_party/** - Third party provided collateral
+
+The *ti/* folder contains the bulk to the TI provided collateral to interact with and control the BOOSTXL-SHARP129 or BOOSTXL-K350QVG-S1 display BoosterPacks. This folder is structured as follows:
+
+-  **lvgl/drivers** - Contains the driver implementation for communication between the host MCU and the display controllers
+-  **boards/.meta** - Internal folder for product integration into SysConfig. You do not have to edit any files in this folder.
+
+The entirety of code provided by TI is provided as an open source BSD license and generally include both prebuilt static libraries for each supported IDE as well as full source code. The *ota* folder does not contain prebuilt libraries as much of the ota implementation is dependent on end user requirements and parameters.
+
+The *third\_party/* folder contains the `LittlevGL <https://github.com/littlevgl/lvgl>`__ library that provides the core graphics library to create embedded GUI.

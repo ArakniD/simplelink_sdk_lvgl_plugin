@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<iarUserArgVars>
+  <group active="true" name="SIMPLELINK_SDK_LVGL_Plugin - CC32XX">
+    <variable>
+      <name>XDCPATH</name>
+      <value>c:/ti/simplelink_cc32xx_sdk_3_20_01_01/kernel/tirtos/packages;c:/ti/simplelink_cc32xx_sdk_3_20_01_01/source</value>
+    </variable>
+    <variable>
+      <name>XDCROOT</name>
+      <value>c:/ti/xdctools_3_51_03_28_core</value>
+    </variable>
+    <variable>
+      <name>SYSCONFIG_ROOT</name>
+      <value>c:/ti/sysconfig_1.1.777</value>
+    </variable>
+    <variable>
+      <name>SIMPLELINK_CC32XX_SDK_INSTALL_DIR</name>
+      <value>c:/ti/simplelink_cc32xx_sdk_3_20_01_01</value>
+    </variable>
+    <variable>
+      <name>SIMPLELINK_SDK_INSTALL_DIR</name>
+      <value>c:/ti/simplelink_cc32xx_sdk_3_20_01_01</value>
+    </variable>
+    <variable>
+      <name>EXAMPLE_ROOT</name>
+      <value>c:/ti/simplelink_sdk_lvgl_plugin_3_20_00_19/tools/iar</value>
+    </variable>
+    <variable>
+      <name>SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR</name>
+      <value>c:/ti/simplelink_sdk_lvgl_plugin_3_20_00_19</value>
+    </variable>
+    <variable>
+      <name>COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR</name>
+      <value>c:/ti/simplelink_sdk_lvgl_plugin_3_20_00_19</value>
+    </variable>
+    <variable>
+      <name>FREERTOS_INSTALL_DIR</name>
+      <value>c:/FreeRTOSv10.1.1</value>
+    </variable>
+  </group>
+</iarUserArgVars>

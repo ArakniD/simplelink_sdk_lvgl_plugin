@@ -1,0 +1,41 @@
+{
+    "name": "simplelink_sdk_lvgl_plugin",
+    "displayName": "simplelink_sdk_lvgl_plugin",
+    "version": "3.20.00.19",
+    "documentationPath": "../docs",
+    "includePaths": [
+        "../source"
+    ],
+    "components": [
+        "/ti/lvgl/lvgl.component.js"
+    ],
+    "devices": [
+        "CC1310RGZ",
+        "CC1310RHB",
+        "CC1310RSM",
+        "CC1312R1F3RGZ",
+        "CC1350RGZ",
+        "CC1350RHB",
+        "CC1350RSM",
+        "CC1352P1F3RGZ",
+        "CC1352R1F3RGZ",
+        "CC13x0F128RHB",
+        "CC13x0F128RSM",
+        "CC2640R2FRGZ",
+        "CC2640R2FRHB",
+        "CC2640R2FRSM",
+        "CC2642R1FRGZ",
+        "CC2652R1FRGZ",
+        "CC2652RB",
+        "CC3200",
+        "CC3220",
+        "CC3220S",
+        "CC3220SF",
+        "CC3235",
+        "CC3235S",
+        "CC3235SF",
+        "MSP432E",
+        "MSP432P401R",
+        "MSP432P4111"
+    ]
+}

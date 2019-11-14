@@ -1,0 +1,368 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Getting Started &mdash; SimpleLink SDK LVGL Plugin  documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="SimpleLink SDK LVGL Plugin  documentation" href="../index.html"/>
+        <link rel="next" title="Other Usage Details" href="other.html"/>
+        <link rel="prev" title="Introduction" href="introduction.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+  <header id="tiHeader">
+    <div class="top">
+      <ul>
+        <li id="top_logo">
+          <a href="http://www.ti.com">
+            <img src="../_static/img/ti_logo.png"/>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="nav"></div>
+  </header>
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> SimpleLink SDK LVGL Plugin
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#littlevgl-third-party-resources-and-documentations">LittlevGL Third Party Resources and Documentations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#code-examples">Code Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#understanding-the-examples">Understanding the Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ide-software-configurations">IDE/Software Configurations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#code-composer-studio-project-guide">Code Composer Studio Project Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#iar-embedded-workbench-project-guide">IAR Embedded Workbench Project Guide</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="other.html">Other Usage Details</a></li>
+<li class="toctree-l1"><a class="reference internal" href="support.html">Support</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">SimpleLink SDK LVGL Plugin</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Getting Started</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="getting-started">
+<h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="littlevgl-third-party-resources-and-documentations">
+<h2>LittlevGL Third Party Resources and Documentations<a class="headerlink" href="#littlevgl-third-party-resources-and-documentations" title="Permalink to this headline">¶</a></h2>
+<p>For detailed LittlevGL features and documentation, please refer to the official <a class="reference external" href="https://docs.littlevgl.com">LittlevGL&#8217;s Documentation</a></p>
+<p>Other useful resources and utilities such as <a class="reference external" href="https://littlevgl.com/ttf-font-to-c-array">font converter</a> and <a class="reference external" href="https://littlevgl.com/image-to-c-array">image converter</a> are also available at <a class="reference external" href="http://littlevgl.com">LittlevGL&#8217;s Official Website</a></p>
+<p>The latest official LittlevGL source code and releases are hosted on <a class="reference external" href="https://github.com/littlevgl/lvgl">LittlevGL&#8217;s GitHub page</a>.</p>
+</div>
+<div class="section" id="code-examples">
+<h2>Code Examples<a class="headerlink" href="#code-examples" title="Permalink to this headline">¶</a></h2>
+<p>The SimpleLink LVGL Plugin provides examples projects under the /examples directory.</p>
+<p>Each example includes a README.html file which provides instructions in the “Example Usage” section for running the example.</p>
+<p><a class="reference external" href="../../../../examples/rtos/MSP_EXP432P401R/lvgl/sharpsimpledisplay/README.html">sharpsimpledisplay</a> – Demonstrate simple LittlevGL graphics capabilities by drawing texts, lines, and an image on the Sharp128x128 Display (BOOSTXL-SHARP128).</p>
+<p><a class="reference external" href="../../../../examples/rtos/MSP_EXP432P401R/lvgl/kentectouchwidgets/README.html">kentectouchwidgets</a> – Demonstrate more advanced LittlevGL graphics capabilities by creating a demo User Interface complete with touchscreen interactions.</p>
+</div>
+<div class="section" id="understanding-the-examples">
+<h2>Understanding the Examples<a class="headerlink" href="#understanding-the-examples" title="Permalink to this headline">¶</a></h2>
+<p>This section examines the <strong>kentectouchwidgets</strong> example to understand the file structures and how it was created.</p>
+<p>To see how the example supports multiple IDEs and RTOS kernels, it is best to look at the example files in the SimpleLink LVGL Plugin installation. When user imports the project for specific IDE only the files related to that particular kernel, compiler, IDE are imported. The files used to support other IDEs and RTOS kernels, Compilers will not be visible.</p>
+<p>Go to your <code class="docutils literal"><span class="pre">&lt;SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR&gt;/examples/rtos/&lt;board&gt;/lvgl/kentectouchwidgets</span></code> directory</p>
+<p>The example contains the following source files:</p>
+<ul class="simple">
+<li><strong>kentectouchwidget.c</strong> : This file contains the function mainthread. The mainthread function initializes LittlevGL and contains the main loop that draws and updates the display.</li>
+<li><strong>lv_conf.h</strong><ul>
+<li>Contains LittlevGL core library graphics feature configurations</li>
+<li>Copied from LittlevGL&#8217;s standard configuration template: lv_conf_template.h</li>
+</ul>
+</li>
+<li><strong>lv_port_disp.h, ti_lvgl_ssd2119_disp.c, ti_lvgl_ls013b7dh03_disp.c</strong><ul>
+<li>Driver for display controller which contains required LittlevGL functions: disp_init(), disp_flush</li>
+<li>Implemented from <a class="reference external" href="https://github.com/littlevgl/lvgl/tree/master/porting">LittlevGL&#8217;s porting templates</a>: lv_port_disp_template.c &amp; lv_port_disp_template.h</li>
+</ul>
+</li>
+<li><strong>lv_port_indev.c, lv_port_indev.h</strong><ul>
+<li>Driver for input device, such as touchscreen</li>
+<li>Implemented from <a class="reference external" href="https://github.com/littlevgl/lvgl/tree/master/porting">LittlevGL&#8217;s porting templates</a>: lv_port_indev_template.c &amp; lv_port_indev_template.h</li>
+</ul>
+</li>
+<li><strong>lv_drv_conf.h</strong><ul>
+<li>Provides macros that abstracts display communication interface calls (such as TI Drivers APIs) from the Display Controller driver</li>
+<li>Implemented from <a class="reference external" href="https://github.com/littlevgl/lv_drivers">LittlevGL&#8217;s display driver template</a>: lv_drv_conf_templ.h</li>
+</ul>
+</li>
+<li><strong>ti_lvgl_disp_interface.h/c</strong><ul>
+<li>Communication interface (SPI, I2C, Parallel) between display controller and host MCU</li>
+</ul>
+</li>
+<li><strong>main_tirtos.c and main_freertos.c</strong> -These files contain the main() function. They are located in subdirectories and use POSIX (pthread) calls to initialize drivers and create the threads that will run the mainthread function.</li>
+<li><strong>&lt;board&gt;.c and &lt;board&gt;.h</strong> (where board is the name of your board)<ul>
+<li>These file set up board-specific items, such as attribute structures for the various TI Drivers. For example, GPIO pin configurations for the GPIO driver.</li>
+</ul>
+</li>
+<li><strong>Board.h</strong><ul>
+<li>Maps board-specific constants to board-independent constants that can be used by the application so that the application code is portable.</li>
+</ul>
+</li>
+<li><strong>Readme.html</strong><ul>
+<li>Contains the readme and and other instructions such as hardware modification that are needed in specific boards.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="ide-software-configurations">
+<h2>IDE/Software Configurations<a class="headerlink" href="#ide-software-configurations" title="Permalink to this headline">¶</a></h2>
+<p>This software package supports and has been tested with TI Code Composer Studio 9.1 as well as IAR Embedded Workbench for ARM v8.32.2. The GCC toolchain for ARM has also been tested within CCS as well as directly through command line invocation. Both FreeRTOS and TI-RTOS are fully supported in this release as well as &#8220;SysConfig Preview&#8221; support.</p>
+<div class="section" id="code-composer-studio-project-guide">
+<h3>Code Composer Studio Project Guide<a class="headerlink" href="#code-composer-studio-project-guide" title="Permalink to this headline">¶</a></h3>
+<p>The SimpleLink SDK LVGL Plugin is designed to integrate seamlessly with the <a class="reference external" href="http://www.ti.com/tool/ccstudio">Code Composer Studio Integrated Development Environment</a> from Texas Instruments. After installing the plugin (it is recommended to use the default installation directory), CCS should automatically detect and install the plugin software package without any special interaction from the user. To check to see if the plugin has installed correctly, go to the <strong>Windows-&gt;Preferences</strong> menu item. Under the <strong>Code Composer Studio-&gt;Products</strong> item you should see <em>&#8220;SimpleLink SDK LVGL Plugin&#8221;</em> installed (with a version number):</p>
+<div class="figure" id="id1">
+<img alt="Product installed" src="../_images/ccs_7.png" />
+<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">Product installed</span></p>
+</div>
+<p>Note that the installation path of the plugin needs to be present in the Product Discovery Path:</p>
+<div class="figure" id="id2">
+<img alt="Product installed" src="../_images/ccs_3.png" />
+<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Product installed</span></p>
+</div>
+</div>
+<div class="section" id="iar-embedded-workbench-project-guide">
+<h3>IAR Embedded Workbench Project Guide<a class="headerlink" href="#iar-embedded-workbench-project-guide" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://www.iar.com/iar-embedded-workbench/">IAR Embedded Workbench</a> is fully supported under the SimpleLink SDK LVGL Plugin ecosystem. Setting up your development environment to work with IAR involves pointing IAR to the plugin and SDK directories as mentioned below.</p>
+<p>To get started, a list of external variables needs to be imported in IAR in order to let the IDE know the paths for all of the relevant software installations. An example configuration file that uses the default paths can be found in the <em>tools/iar/SIMPLELINK_SDK_LVGL_PLUGIN_DEVICE_PLATFORM.custom_argvars</em> file of the SimpleLink SDK LVGL Plugin installation directory. This file might have to be changed depending on specific installation paths and version numbers; however it should work if the user chose to use the default installation paths (note the version numbers might slightly vary from the picture below):</p>
+<div class="figure" id="id3">
+<img alt="Import external variables" src="../_images/iar_1.png" />
+<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Import external variables</span></p>
+</div>
+<p>To import this file into your IAR IDE, navigate to <em>Tools-&gt;Configure Custom Argument Variables</em>.</p>
+<div class="figure" id="id4">
+<img alt="Import external variables" src="../_images/iar_3.png" />
+<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">Import external variables</span></p>
+</div>
+<p>From here, click the “Global” tab and navigate to the directory where the custom_argvars file is stored (by default in the tools/iar/ directory of the installation path). Note that there are separate sets of custom_argvars for the supported host devices.</p>
+<div class="figure" id="id5">
+<img alt="Add variables" src="../_images/iar_2.png" />
+<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">Add variables</span></p>
+</div>
+<p>After importing this file the custom variables will show up in the text box in the middle of the screen. Click OK to closeout and save the dialog. Note that these custom variables need only be imported once and the settings will persist.</p>
+<div class="figure" id="id6">
+<img alt="Variables have been imported" src="../_images/iar_4.png" />
+<p class="caption"><span class="caption-number">Fig. 6 </span><span class="caption-text">Variables have been imported</span></p>
+</div>
+<p>Once the external symbols have been imported you can either open the project manually on the file system or use IAR&#8217;s built-in example project explorer. To open the project manually, simply go to <strong>*File-&gt;Open-&gt;Workspace*</strong>: Navigate to the example project&#8217;s eww file. For example, the sharpsimpledisplay&#8217;s eww file would be located at:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">install_directory</span><span class="o">/</span><span class="n">examples</span><span class="o">/</span><span class="n">rtos</span><span class="o">/</span><span class="n">MSP_EXP432P401R</span><span class="o">/</span><span class="n">demos</span><span class="o">/</span><span class="n">network_terminal</span><span class="o">/</span><span class="n">tirtos</span><span class="o">/</span><span class="n">iar</span><span class="o">/</span><span class="n">sharpsimpledisplay_template</span><span class="o">.</span><span class="n">eww</span>
+</pre></div>
+</div>
+<p>Once you have opened the workspace in IAR you are able to download and debug the program as you would any other IAR project.</p>
+<div class="figure" id="id7">
+<img alt="Ready to go" src="../_images/iar_5.png" />
+<p class="caption"><span class="caption-number">Fig. 7 </span><span class="caption-text">Ready to go</span></p>
+</div>
+<p>Note that if you upgrade or change versions of the SimpleLink SDK LVGL Plugin or the base SDK, the external tools variables will have to change to point to the correct version of the software.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="other.html" class="btn btn-neutral float-right" title="Other Usage Details" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="introduction.html" class="btn btn-neutral" title="Introduction" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <a href="http://www.ti.com/corp/docs/legal/copyright.shtml">&copy; Copyright 1995-2019</a>, Texas Instruments Incorporated. All rights reserved. <br>
+      <a href="http://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="http://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="http://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="http://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+        });
+
+      var menuHeight = window.innerHeight;
+
+      var contentOffset = $(".wy-nav-content-wrap").offset();
+      var contentHeight = $(".wy-nav-content-wrap").height();
+      var contentBottom = contentOffset.top + contentHeight;
+
+      function setNavbarTop() {
+          var scrollTop = $(window).scrollTop();
+          var maxTop = scrollTop + menuHeight;
+
+          // If past the header
+          if (scrollTop > contentOffset.top && maxTop < contentBottom) {
+            stickyTop = scrollTop - contentOffset.top;
+          } else if (maxTop > contentBottom) {
+            stickyTop = scrollTop - contentOffset.top - (maxTop - contentBottom);
+          } else {
+            stickyTop = 0;
+          }
+
+          $(".wy-nav-side").css("top", stickyTop);
+      }
+
+      $(document).ready(function() {
+        setNavbarTop();
+        $(window).scroll(function () {
+          setNavbarTop();
+        });
+      });
+  </script>
+   
+
+</body>
+</html>

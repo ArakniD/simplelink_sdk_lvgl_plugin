@@ -1,0 +1,18 @@
+<map id="lv_disp.h" name="lv_disp.h">
+<area shape="rect" id="node2" href="$lv__hal_8h.html" title="../lv_hal/lv_hal.h" alt="" coords="475,155,603,181"/>
+<area shape="rect" id="node17" href="$lv__obj_8h.html" title="lv_obj.h" alt="" coords="781,80,854,107"/>
+<area shape="rect" id="node3" href="$lv__hal__disp_8h.html" title="lv_hal_disp.h" alt="" coords="425,229,532,256"/>
+<area shape="rect" id="node15" href="$lv__hal__indev_8h.html" title="lv_hal_indev.h" alt="" coords="556,229,671,256"/>
+<area shape="rect" id="node16" href="$lv__hal__tick_8h.html" title="lv_hal_tick.h" alt="" coords="347,379,451,405"/>
+<area shape="rect" id="node6" href="$lv__color_8h.html" title="../lv_misc/lv_color.h" alt="" coords="1273,379,1423,405"/>
+<area shape="rect" id="node8" href="$lv__area_8h.html" title="../lv_misc/lv_area.h" alt="" coords="1447,379,1595,405"/>
+<area shape="rect" id="node10" href="$lv__ll_8h.html" title="../lv_misc/lv_ll.h" alt="" coords="195,379,322,405"/>
+<area shape="rect" id="node14" href="$lv__task_8h.html" title="../lv_misc/lv_task.h" alt="" coords="405,304,552,331"/>
+<area shape="rect" id="node11" href="$lv__mem_8h.html" title="lv_mem.h" alt="" coords="475,453,562,480"/>
+<area shape="rect" id="node13" href="$lv__log_8h.html" title="lv_log.h" alt="" coords="557,528,630,555"/>
+<area shape="rect" id="node18" href="$lv__style_8h.html" title="lv_style.h" alt="" coords="959,304,1044,331"/>
+<area shape="rect" id="node22" href="$lv__types_8h.html" title="../lv_misc/lv_types.h" alt="" coords="1321,155,1476,181"/>
+<area shape="rect" id="node19" href="$lv__font_8h.html" title="../lv_font/lv_font.h" alt="" coords="931,379,1071,405"/>
+<area shape="rect" id="node21" href="$lv__anim_8h.html" title="../lv_misc/lv_anim.h" alt="" coords="1096,379,1248,405"/>
+<area shape="rect" id="node20" href="$lv__symbol__def_8h.html" title="lv_symbol_def.h" alt="" coords="1060,528,1188,555"/>
+</map>

@@ -1,0 +1,141 @@
+Getting Started
+===============
+
+LittlevGL Third Party Resources and Documentations
+--------------------------------------------------
+
+For detailed LittlevGL features and documentation, please refer to the official `LittlevGL's Documentation <https://docs.littlevgl.com>`__
+
+Other useful resources and utilities such as `font converter <https://littlevgl.com/ttf-font-to-c-array>`__ and `image converter <https://littlevgl.com/image-to-c-array>`__ are also available at `LittlevGL's Official Website <http://littlevgl.com>`__
+
+The latest official LittlevGL source code and releases are hosted on `LittlevGL's GitHub page <https://github.com/littlevgl/lvgl>`__.
+
+Code Examples
+-------------
+
+The SimpleLink LVGL Plugin provides examples projects under the /examples directory.
+
+Each example includes a README.html file which provides instructions in the “Example Usage” section for running the example.
+
+`sharpsimpledisplay <../../../../examples/rtos/MSP_EXP432P401R/lvgl/sharpsimpledisplay/README.html>`__ – Demonstrate simple LittlevGL graphics capabilities by drawing texts, lines, and an image on the Sharp128x128 Display (BOOSTXL-SHARP128).
+
+`kentectouchwidgets <../../../../examples/rtos/MSP_EXP432P401R/lvgl/kentectouchwidgets/README.html>`__ – Demonstrate more advanced LittlevGL graphics capabilities by creating a demo User Interface complete with touchscreen interactions.
+
+Understanding the Examples
+--------------------------
+
+This section examines the **kentectouchwidgets** example to understand the file structures and how it was created.
+
+To see how the example supports multiple IDEs and RTOS kernels, it is best to look at the example files in the SimpleLink LVGL Plugin installation. When user imports the project for specific IDE only the files related to that particular kernel, compiler, IDE are imported. The files used to support other IDEs and RTOS kernels, Compilers will not be visible.
+
+Go to your ``<SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR>/examples/rtos/<board>/lvgl/kentectouchwidgets`` directory
+
+The example contains the following source files:
+
+-  **kentectouchwidget.c** : This file contains the function mainthread. The mainthread function initializes LittlevGL and contains the main loop that draws and updates the display.
+-  **lv\_conf.h**
+
+   -  Contains LittlevGL core library graphics feature configurations
+   -  Copied from LittlevGL's standard configuration template: lv\_conf\_template.h
+
+-  **lv\_port\_disp.h, ti\_lvgl\_ssd2119\_disp.c, ti\_lvgl\_ls013b7dh03\_disp.c**
+
+   -  Driver for display controller which contains required LittlevGL functions: disp\_init(), disp\_flush
+   -  Implemented from `LittlevGL's porting templates <https://github.com/littlevgl/lvgl/tree/master/porting>`__: lv\_port\_disp\_template.c & lv\_port\_disp\_template.h
+
+-  **lv\_port\_indev.c, lv\_port\_indev.h**
+
+   -  Driver for input device, such as touchscreen
+   -  Implemented from `LittlevGL's porting templates <https://github.com/littlevgl/lvgl/tree/master/porting>`__: lv\_port\_indev\_template.c & lv\_port\_indev\_template.h
+
+-  **lv\_drv\_conf.h**
+
+   -  Provides macros that abstracts display communication interface calls (such as TI Drivers APIs) from the Display Controller driver
+   -  Implemented from `LittlevGL's display driver template <https://github.com/littlevgl/lv_drivers>`__: lv\_drv\_conf\_templ.h
+
+-  **ti\_lvgl\_disp\_interface.h/c**
+
+   -  Communication interface (SPI, I2C, Parallel) between display controller and host MCU
+
+-  **main\_tirtos.c and main\_freertos.c** -These files contain the main() function. They are located in subdirectories and use POSIX (pthread) calls to initialize drivers and create the threads that will run the mainthread function.
+-  **<board>.c and <board>.h** (where board is the name of your board)
+
+   -  These file set up board-specific items, such as attribute structures for the various TI Drivers. For example, GPIO pin configurations for the GPIO driver.
+
+-  **Board.h**
+
+   -  Maps board-specific constants to board-independent constants that can be used by the application so that the application code is portable.
+
+-  **Readme.html**
+
+   -  Contains the readme and and other instructions such as hardware modification that are needed in specific boards.
+
+IDE/Software Configurations
+---------------------------
+
+This software package supports and has been tested with TI Code Composer Studio 9.1 as well as IAR Embedded Workbench for ARM v8.32.2. The GCC toolchain for ARM has also been tested within CCS as well as directly through command line invocation. Both FreeRTOS and TI-RTOS are fully supported in this release as well as "SysConfig Preview" support.
+
+Code Composer Studio Project Guide
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The SimpleLink SDK LVGL Plugin is designed to integrate seamlessly with the `Code Composer Studio Integrated Development Environment <http://www.ti.com/tool/ccstudio>`__ from Texas Instruments. After installing the plugin (it is recommended to use the default installation directory), CCS should automatically detect and install the plugin software package without any special interaction from the user. To check to see if the plugin has installed correctly, go to the **Windows->Preferences** menu item. Under the **Code Composer Studio->Products** item you should see *"SimpleLink SDK LVGL Plugin"* installed (with a version number):
+
+.. figure:: images/ccs_7.png
+   :alt: Product installed
+
+   Product installed
+
+Note that the installation path of the plugin needs to be present in the Product Discovery Path:
+
+.. figure:: images/ccs_3.png
+   :alt: Product installed
+
+   Product installed
+
+IAR Embedded Workbench Project Guide
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+`IAR Embedded Workbench <https://www.iar.com/iar-embedded-workbench/>`__ is fully supported under the SimpleLink SDK LVGL Plugin ecosystem. Setting up your development environment to work with IAR involves pointing IAR to the plugin and SDK directories as mentioned below.
+
+To get started, a list of external variables needs to be imported in IAR in order to let the IDE know the paths for all of the relevant software installations. An example configuration file that uses the default paths can be found in the *tools/iar/SIMPLELINK\_SDK\_LVGL\_PLUGIN\_DEVICE\_PLATFORM.custom\_argvars* file of the SimpleLink SDK LVGL Plugin installation directory. This file might have to be changed depending on specific installation paths and version numbers; however it should work if the user chose to use the default installation paths (note the version numbers might slightly vary from the picture below):
+
+.. figure:: images/iar_1.png
+   :alt: Import external variables
+
+   Import external variables
+
+To import this file into your IAR IDE, navigate to *Tools->Configure Custom Argument Variables*.
+
+.. figure:: images/iar_3.png
+   :alt: Import external variables
+
+   Import external variables
+
+From here, click the “Global” tab and navigate to the directory where the custom\_argvars file is stored (by default in the tools/iar/ directory of the installation path). Note that there are separate sets of custom\_argvars for the supported host devices.
+
+.. figure:: images/iar_2.png
+   :alt: Add variables
+
+   Add variables
+
+After importing this file the custom variables will show up in the text box in the middle of the screen. Click OK to closeout and save the dialog. Note that these custom variables need only be imported once and the settings will persist.
+
+.. figure:: images/iar_4.png
+   :alt: Variables have been imported
+
+   Variables have been imported
+
+Once the external symbols have been imported you can either open the project manually on the file system or use IAR's built-in example project explorer. To open the project manually, simply go to ***File->Open->Workspace***: Navigate to the example project's eww file. For example, the sharpsimpledisplay's eww file would be located at:
+
+::
+
+    install_directory/examples/rtos/MSP_EXP432P401R/demos/network_terminal/tirtos/iar/sharpsimpledisplay_template.eww
+
+Once you have opened the workspace in IAR you are able to download and debug the program as you would any other IAR project.
+
+.. figure:: images/iar_5.png
+   :alt: Ready to go
+
+   Ready to go
+
+Note that if you upgrade or change versions of the SimpleLink SDK LVGL Plugin or the base SDK, the external tools variables will have to change to point to the correct version of the software.

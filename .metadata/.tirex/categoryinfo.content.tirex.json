@@ -1,0 +1,28 @@
+[{
+        "name": "Examples",
+        "mainCategories": [
+            []
+        ],
+        "subCategories": [],
+        "resourceType": "categoryInfo",
+        "description": "<p>TI's SimpleLink LVGL Plugin provides a couple examples to help developers get started with creating Embedded GUIs on SimpleLink Platforms.</p>"
+    },
+    {
+        "name": "Examples - SysConfig Preview",
+        "mainCategories": [
+            []
+        ],
+        "subCategories": [],
+        "resourceType": "categoryInfo",
+        "description": "<p>This is an early preview example that uses an alternative graphical configuration tool called SysConfig. These examples are similar to the examples in examples/rtos but they use SysConfig to generate configuration code instead of having the application provide it. SysConfig is integrated with logic to help manage, expose and potentially solve conflicts visually to free up more time for creating differentiated applications. Use of the SysConfig preview examples is not required for developing on SimpleLink devices. However, we encourage you to try them out and to give us your feedback. More information on SysConfig can be found in the SysConfig section of the SimpleLink MCU SDK User's Guide. See the \"System Configuration Basics\" lab in <a href='http://www.ti.com/wireless-connectivity/simplelink-solutions/overview/simplelink-academy.html'>SimpleLink Academy</a> for step-by-step instructions for installing and using SysConfig</p>"
+    },
+    {
+        "name": "Documents",
+        "mainCategories": [
+            []
+        ],
+        "subCategories": [],
+        "resourceType": "categoryInfo",
+        "description": "<p>The SimpleLink LVGL Plugin comes with documentations to facilitate using the Plugin. For a good overview of what documentation is available in the SimpleLink LVGL Plugin, go to \"Documentation Overview\".</p>"
+    }
+]

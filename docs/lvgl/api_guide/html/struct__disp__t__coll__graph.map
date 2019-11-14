@@ -1,0 +1,10 @@
+<map id="_disp_t" name="_disp_t">
+<area shape="rect" id="node2" href="$struct__disp__drv__t.html" title="_disp_drv_t" alt="" coords="52,200,148,227"/>
+<area shape="rect" id="node3" href="$structlv__disp__buf__t.html" title="lv_disp_buf_t" alt="" coords="32,95,140,121"/>
+<area shape="rect" id="node4" href="$structlv__area__t.html" title="lv_area_t" alt="" coords="44,5,127,32"/>
+<area shape="rect" id="node5" href="$struct__lv__obj__t.html" title="_lv_obj_t" alt="" coords="180,200,260,227"/>
+<area shape="rect" id="node6" href="$structlv__style__t.html" title="lv_style_t" alt="" coords="260,95,346,121"/>
+<area shape="rect" id="node7" href="$struct__lv__font__struct.html" title="_lv_font_struct" alt="" coords="244,5,362,32"/>
+<area shape="rect" id="node8" href="$structlv__ll__t.html" title="lv_ll_t" alt="" coords="370,95,431,121"/>
+<area shape="rect" id="node9" href="$struct__lv__task__t.html" title="_lv_task_t" alt="" coords="460,200,548,227"/>
+</map>

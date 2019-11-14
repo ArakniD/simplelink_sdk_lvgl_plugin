@@ -1,0 +1,4 @@
+<map id="lv_font_fmt_txt_dsc_t" name="lv_font_fmt_txt_dsc_t">
+<area shape="rect" id="node2" href="$structlv__font__fmt__txt__cmap__t.html" title="lv_font_fmt_txt_cmap_t" alt="" coords="5,13,183,39"/>
+<area shape="rect" id="node3" href="$structlv__font__fmt__txt__glyph__dsc__t.html" title="lv_font_fmt_txt_glyph\l_dsc_t" alt="" coords="207,5,373,47"/>
+</map>

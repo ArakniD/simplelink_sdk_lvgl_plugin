@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectSpec>
+    <applicability>
+        <when>
+            <context
+                deviceFamily="MSP432"
+                deviceId="MSP432E401Y"
+            />
+        </when>
+    </applicability>
+
+    <import spec="${COM_TI_SIMPLELINK_MSP432E4_SDK_INSTALL_DIR}/kernel/tirtos/builds/MSP_EXP432E401Y/release/gcc/tirtos_builds_MSP_EXP432E401Y_release_gcc.projectspec"/>
+
+    <project
+        title="Kentec Touch Widget"
+        name="kentectouchwidgets_MSP_EXP432E401Y_tirtos_gcc_syscfg"
+        toolChain="GNU"
+        connection="TIXDS110_Connection.xml"
+        device="MSP432E401Y"
+        ignoreDefaultDeviceSettings="true"
+        ignoreDefaultCCSSettings="true"
+        references="tirtos_builds_MSP_EXP432E401Y_release_gcc"
+        products="com.ti.SIMPLELINK_SDK_LVGL_PLUGIN"
+        compilerBuildOptions="
+            -I${PROJECT_ROOT}
+            -I${PROJECT_ROOT}/${ConfigName}
+            -I${COM_TI_SIMPLELINK_MSP432E4_SDK_INSTALL_DIR}/source
+            -I${COM_TI_SIMPLELINK_MSP432E4_SDK_INSTALL_DIR}/source/third_party/CMSIS/Include
+            -DLV_CONF_INCLUDE_SIMPLE
+            -I${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source
+            -I${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party
+            -I${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl
+            -I${COM_TI_SIMPLELINK_MSP432E4_SDK_INSTALL_DIR}/source/ti/posix/gcc
+            -mcpu=cortex-m4
+            -march=armv7e-m
+            -mthumb
+            -std=c99
+            -std=c++11
+            -mfloat-abi=hard
+            -mfpu=fpv4-sp-d16
+            -ffunction-sections
+            -fdata-sections
+            -g
+            -gstrict-dwarf
+            -Wall
+            -I${COM_TI_SIMPLELINK_MSP432E4_SDK_INSTALL_DIR}/kernel/tirtos/packages/gnu/targets/arm/libs/install-native/arm-none-eabi/include/newlib-nano
+            -I${COM_TI_SIMPLELINK_MSP432E4_SDK_INSTALL_DIR}/kernel/tirtos/packages/gnu/targets/arm/libs/install-native/arm-none-eabi/include
+            -I${CG_TOOL_ROOT}/arm-none-eabi/include
+        "
+        linkerBuildOptions="
+            -nostartfiles
+            -L${COM_TI_SIMPLELINK_MSP432E4_SDK_INSTALL_DIR}/source
+            -l:ti/display/lib/display.am4fg
+            -l:ti/grlib/lib/gcc/m4f/grlib.a
+            -l:third_party/spiffs/lib/gcc/m4f/spiffs.a
+            -l:ti/drivers/lib/drivers_msp432e4.am4fg
+            -l:third_party/fatfs/lib/gcc/m4f/fatfs.a
+            -L${COM_TI_SIMPLELINK_MSP432E4_SDK_INSTALL_DIR}/kernel/tirtos/packages
+            -l:ti/dpl/lib/dpl_msp432e4.am4fg
+            -l${GENERATED_LIBRARIES}
+            -l:ti/devices/msp432e4/driverlib/lib/gcc/m4f/msp432e4_driverlib.a
+            -march=armv7e-m
+            -mthumb
+            -mfloat-abi=hard
+            -mfpu=fpv4-sp-d16
+            -static
+            -Wl,--gc-sections
+            -L${COM_TI_SIMPLELINK_MSP432E4_SDK_INSTALL_DIR}/kernel/tirtos/packages/gnu/targets/arm/libs/install-native/arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard
+            -L${CG_TOOL_ROOT}/arm-none-eabi/lib
+            -lgcc
+            -lc
+            -lm
+            -lnosys
+            --specs=nano.specs
+        "
+        enableSysConfigTool="true"
+        sysConfigBuildOptions="
+            --product ${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/.metadata/product.json
+            --product ${COM_TI_SIMPLELINK_MSP432E4_SDK_INSTALL_DIR}/.metadata/product.json
+        "
+        description="A touch widget demo on the BOOSTXL-K350QVG-S1 Display BoosterPack">
+
+        <property name="buildProfile" value="release"/>
+        <property name="isHybrid" value="true"/>
+        <group id="kentectouchwidgets.SIMPLELINK_SDK_LVGL_PLUGIN.MSP_EXP432E401Y.lvgl.GCC"/>
+        <file path="../../kentectouchwidgets.c" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../../README.md" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../../README.html" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../../kentectouchwidgets.syscfg" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../../overview.rov.json" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../../tirtos/main_tirtos.c" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_MSP432E4_SDK_INSTALL_DIR}/source/ti/boards/MSP_EXP432E401Y/Board.html" openOnCreation="false" excludeFromBuild="false" action="link">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/LICENCE.txt" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/README.md" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/lvgl.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/lvgl.mk" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_conf_checker.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_core/lv_core.mk" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_core">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_core/lv_disp.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_core">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_core/lv_disp.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_core">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_core/lv_group.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_core">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_core/lv_group.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_core">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_core/lv_indev.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_core">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_core/lv_indev.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_core">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_core/lv_obj.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_core">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_core/lv_obj.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_core">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_core/lv_refr.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_core">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_core/lv_refr.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_core">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_core/lv_style.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_core">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_core/lv_style.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_core">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_draw/lv_draw.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_draw">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_draw/lv_draw.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_draw">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_draw/lv_draw.mk" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_draw">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_draw/lv_draw_arc.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_draw">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_draw/lv_draw_arc.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_draw">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_draw/lv_draw_basic.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_draw">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_draw/lv_draw_basic.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_draw">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_draw/lv_draw_img.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_draw">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_draw/lv_draw_img.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_draw">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_draw/lv_draw_label.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_draw">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_draw/lv_draw_label.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_draw">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_draw/lv_draw_line.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_draw">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_draw/lv_draw_line.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_draw">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_draw/lv_draw_rect.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_draw">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_draw/lv_draw_rect.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_draw">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_draw/lv_draw_triangle.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_draw">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_draw/lv_draw_triangle.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_draw">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_draw/lv_img_cache.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_draw">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_draw/lv_img_cache.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_draw">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_draw/lv_img_decoder.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_draw">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_draw/lv_img_decoder.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_draw">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_font/lv_font.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_font">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_font/lv_font.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_font">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_font/lv_font.mk" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_font">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_font/lv_font_fmt_txt.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_font">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_font/lv_font_fmt_txt.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_font">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_font/lv_font_roboto_12.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_font">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_font/lv_font_roboto_16.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_font">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_font/lv_font_roboto_22.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_font">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_font/lv_font_roboto_28.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_font">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_font/lv_font_unscii_8.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_font">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_font/lv_symbol_def.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_font">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_hal/lv_hal.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_hal">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_hal/lv_hal.mk" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_hal">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_hal/lv_hal_disp.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_hal">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_hal/lv_hal_disp.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_hal">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_hal/lv_hal_indev.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_hal">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_hal/lv_hal_indev.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_hal">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_hal/lv_hal_tick.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_hal">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_hal/lv_hal_tick.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_hal">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_misc/lv_anim.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_misc">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_misc/lv_anim.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_misc">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_misc/lv_area.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_misc">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_misc/lv_area.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_misc">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_misc/lv_async.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_misc">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_misc/lv_async.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_misc">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_misc/lv_circ.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_misc">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_misc/lv_circ.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_misc">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_misc/lv_color.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_misc">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_misc/lv_color.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_misc">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_misc/lv_fs.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_misc">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_misc/lv_fs.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_misc">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_misc/lv_gc.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_misc">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_misc/lv_gc.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_misc">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_misc/lv_ll.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_misc">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_misc/lv_ll.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_misc">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_misc/lv_log.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_misc">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_misc/lv_log.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_misc">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_misc/lv_math.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_misc">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_misc/lv_math.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_misc">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_misc/lv_mem.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_misc">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_misc/lv_mem.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_misc">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_misc/lv_misc.mk" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_misc">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_misc/lv_task.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_misc">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_misc/lv_task.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_misc">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_misc/lv_templ.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_misc">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_misc/lv_templ.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_misc">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_misc/lv_txt.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_misc">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_misc/lv_txt.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_misc">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_misc/lv_types.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_misc">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_misc/lv_utils.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_misc">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_misc/lv_utils.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_misc">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_objx/lv_arc.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_objx">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_objx/lv_arc.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_objx">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_objx/lv_bar.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_objx">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_objx/lv_bar.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_objx">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_objx/lv_btn.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_objx">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_objx/lv_btn.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_objx">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_objx/lv_btnm.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_objx">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_objx/lv_btnm.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_objx">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_objx/lv_calendar.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_objx">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_objx/lv_calendar.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_objx">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_objx/lv_canvas.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_objx">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_objx/lv_canvas.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_objx">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_objx/lv_cb.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_objx">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_objx/lv_cb.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_objx">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_objx/lv_chart.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_objx">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_objx/lv_chart.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_objx">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_objx/lv_cont.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_objx">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_objx/lv_cont.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_objx">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_objx/lv_ddlist.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_objx">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_objx/lv_ddlist.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_objx">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_objx/lv_gauge.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_objx">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_objx/lv_gauge.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_objx">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_objx/lv_img.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_objx">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_objx/lv_img.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_objx">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_objx/lv_imgbtn.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_objx">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_objx/lv_imgbtn.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_objx">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_objx/lv_kb.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_objx">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_objx/lv_kb.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_objx">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_objx/lv_label.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_objx">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_objx/lv_label.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_objx">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_objx/lv_led.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_objx">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_objx/lv_led.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_objx">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_objx/lv_line.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_objx">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_objx/lv_line.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_objx">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_objx/lv_list.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_objx">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_objx/lv_list.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_objx">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_objx/lv_lmeter.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_objx">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_objx/lv_lmeter.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_objx">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_objx/lv_mbox.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_objx">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_objx/lv_mbox.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_objx">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_objx/lv_objx.mk" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_objx">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_objx/lv_objx_templ.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_objx">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_objx/lv_objx_templ.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_objx">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_objx/lv_page.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_objx">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_objx/lv_page.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_objx">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_objx/lv_preload.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_objx">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_objx/lv_preload.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_objx">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_objx/lv_roller.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_objx">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_objx/lv_roller.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_objx">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_objx/lv_slider.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_objx">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_objx/lv_slider.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_objx">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_objx/lv_spinbox.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_objx">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_objx/lv_spinbox.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_objx">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_objx/lv_sw.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_objx">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_objx/lv_sw.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_objx">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_objx/lv_ta.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_objx">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_objx/lv_ta.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_objx">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_objx/lv_table.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_objx">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_objx/lv_table.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_objx">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_objx/lv_tabview.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_objx">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_objx/lv_tabview.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_objx">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_objx/lv_tileview.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_objx">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_objx/lv_tileview.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_objx">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_objx/lv_win.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_objx">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_objx/lv_win.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_objx">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_themes/lv_theme.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_themes">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_themes/lv_theme.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_themes">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_themes/lv_theme_alien.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_themes">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_themes/lv_theme_alien.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_themes">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_themes/lv_theme_default.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_themes">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_themes/lv_theme_default.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_themes">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_themes/lv_theme_material.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_themes">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_themes/lv_theme_material.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_themes">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_themes/lv_theme_mono.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_themes">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_themes/lv_theme_mono.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_themes">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_themes/lv_theme_nemo.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_themes">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_themes/lv_theme_nemo.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_themes">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_themes/lv_theme_night.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_themes">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_themes/lv_theme_night.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_themes">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_themes/lv_theme_templ.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_themes">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_themes/lv_theme_templ.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_themes">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_themes/lv_theme_zen.c" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_themes">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_themes/lv_theme_zen.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_themes">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_themes/lv_themes.mk" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src/lv_themes">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/source/third_party/lvgl/src/lv_version.h" openOnCreation="false" excludeFromBuild="false" action="link" targetDirectory="lvgl/src">
+        </file>
+        <file path="../../tirtos/gcc/MSP_EXP432E401Y_TIRTOS.lds" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+    </project>
+</projectSpec>

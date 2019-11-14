@@ -1,0 +1,29 @@
+[{
+        "name": "Release Notes",
+        "resourceType": "file",
+        "location": "../../release_notes_simplelink_sdk_lvgl_plugin_3_20_00_19.html",
+        "categories": ["Documents"],
+        "mainCategories": ["Documents"]
+    },
+    {
+        "name": "Documentation Overview",
+        "resourceType": "file",
+        "location": "../../docs/Documentation_Overview.html",
+        "categories": ["Documents"],
+        "mainCategories": ["Documents"]
+    },
+    {
+        "name": "SimpleLink SDK LVGL Plugin User’s Guide",
+        "resourceType": "file",
+        "location": "../../docs/lvgl/Users_Guide.html",
+        "categories": ["Documents"],
+        "mainCategories": ["Documents"]
+    },
+    {
+        "name": "LittlevGL Third Party Documentation",
+        "resourceType": "web.page",
+        "location": "http://docs.littlevgl.com/",
+        "categories": ["Documents"],
+        "mainCategories": ["Documents"]
+    }
+]

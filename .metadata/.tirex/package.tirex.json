@@ -1,0 +1,33 @@
+[{
+    "metadataVersion": "3.0.0",
+    "id": "com.ti.SIMPLELINK_SDK_LVGL_PLUGIN",
+    "name": "SimpleLink SDK LVGL Plugin",
+    "version": "3.20.00.19",
+    "type": "software",
+    "allowPartialDownload": "false",
+    "license": "../../license_simplelink_sdk_lvgl_plugin_3_20_00_19.txt",
+    "image": "./lvgl-tirex.png",
+    "dependencies": [{
+            "packageId": "com.ti.SIMPLELINK_MSP432_SDK",
+            "version": "3.20.00.06",
+            "require": "optional"
+        },
+        {
+            "packageId": "com.ti.SIMPLELINK_MSP432E4_SDK",
+            "version": "3.20.00.10",
+            "require": "optional"
+        },
+        {
+            "packageId": "com.ti.SIMPLELINK_CC13X2_26X2_SDK",
+            "version": "3.20.00.68",
+            "require": "optional"
+        },
+        {
+            "packageId": "com.ti.SIMPLELINK_CC32XX_SDK",
+            "version": "3.20.01.01",
+            "require": "optional"
+        }
+    ],
+    "description": "<p>The SimpleLink™ SDK LVGL Plugin is a companion software package that enables advanced graphics capabilities on various SimpleLink™ MCU platforms by integrating the free and open-source 3rd party library, <a href=\"https://littlevgl.com\">LittlevGL</a>.</p>",
+    "rootCategory" : ["SimpleLink SDK Plugins", "SimpleLink SDK LVGL Plugin"]
+}]

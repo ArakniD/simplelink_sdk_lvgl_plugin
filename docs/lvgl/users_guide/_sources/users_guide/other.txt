@@ -1,0 +1,130 @@
+Other Usage Details
+===================
+
+Configuring LittlevGL
+---------------------
+
+LittlevGL has a configuration header file called **lv\_conf.h**. It can be modified manually to configure the library’s basic behavior, disables unused modules and features, adjusts the size of memory buffers in compile time, etc.
+
+SysConfig
+~~~~~~~~~
+
+TI's SysConfig tool is a graphical user interface that makes it easy to configure software & hardware components and can be used to configure LittlevGL's configuration file, **lv\_conf.h**
+
+In this Plugin release, SysConfig is optional and available as a preview. (Future release will expand the use of SysConfig.) **Note: This SimpleLink LVGL Plugin 3.20.xx release is only compatible with SimpleLink SDK 3.20.xx.**
+
+SysConfig versions of the examples are provided in the examples/sysconfig\_preview directory tree. These examples are basically the same as the examples in examples/rtos and examples/nortos, except they use SysConfig to generate configuration code instead of having the application provide it.
+
+Brief Overview
+^^^^^^^^^^^^^^
+
+Examine the **sharpsimpledisplay** example inside the ``<SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR>/examples/sysconfig_preview/<board>/lvgl/sharpsimpledisplay`` directory.
+
+Located inside each sysconfig\_preview example directory is a sharpsimpledisplay.syscfg file. This file can be edited manually or opened up inside the SysConfig GUI:
+
+.. figure:: images/syscfg_overview.png
+   :alt: SysConfig overview
+
+   SysConfig overview
+
+The Global Parameters box can be expanded to reveal LittlevGL Library Configurations that are used to generate **lv\_conf.h**
+
+.. figure:: images/syscfg_lvgl_conf.png
+   :alt: SysConfig overview
+
+   SysConfig overview
+
+Memory Considerations
+---------------------
+
+LittlevGL requires a minimum of 64 kB Flash/ROM and 10 kB RAM (when configured to use only essential components), but can easily use up > 100 kB Flash/ROM if more advanced features widgets are enabled.
+
+Keep in mind that exact memory consumption will depend on the features, how many objects/widgets, whether display buffer is used, or the display that are actually used in an application. However, below provides some rough numbers to expect.
+
+The LittlevGL Display SysConfig module provides 3 preset LittlevGL Configurations: - **Low:** ~50 kB of Flash/ROM and (~15 kB RAM with the Sharp128 display) - Only Default Theme is enabled - Only lv\_monospace\_8 Font is enabled - Only Label, Image, and Line objects are enabled - **Medium:** ~110 kB of Flash/ROM and (~40 kB RAM with the Kentec display) - Default and Material Themes are enabled - lv\_font\_dejavu10, lv\_font\_dejavu20, lv\_font\_dejavu30, lv\_font\_dejavu40, and lv\_monospace8 are enabled @ 1-bit-per-pixel - Additional objects TabView, Bar, Chart, Button, CheckBox, Dropdownlist, & Slider are enabled. - **High:** >150 kB of Flash/ROM and RAM use varies with display/buffer usage - All built-in themes, fonts, and objects are enabled
+
+Adding LittlevGL Plugin to Existing SimpleLink SDK Projects
+-----------------------------------------------------------
+
+Steps shown below demonstrates the procedure in CCS
+
+Regular Non-SysConfig SDK Project
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1. Copy entire LVGL source code from $(SIMPLELINK\_SDK\_LVGL\_PLUGIN\_INSTALL\_DIR)/source/third\_party/lvgl/ to ${PROJECT\_ROOT}/lvgl/
+2. Add include path to compiler options ``${PROJECT_ROOT}/lvgl`` |Compiler options|
+3. Add pre-defined symbol to compiler options ``--define=LV_CONF_INCLUDE_SIMPLE`` |Compiler options|
+4. Copy lv\_conf.h from one of the example projects into the project root and configure as needed.
+5. Copy all applicable display driver and interface files from $(SIMPLELINK\_SDK\_LVGL\_PLUGIN\_INSTALL\_DIR)/source/ti/lvgl/drivers to ${PROJECT\_ROOT}/
+6. Manually update project Board files to configure for corresponding display connections. Or just copy the reference board files from the corresponding LaunchPad's example folder.
+7. Modify main.c
+
+   -  Add #include <lv\_port\_disp.h>
+   -  Add #include <lv\_port\_indev.h> if using an input device
+   -  Follow LVGL documentation to initialize and utilize LVGL
+
+SysConfig (Preview) SDK Projects
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1. Select SimpleLink SDK LVGL Plugin inside Project Properties -> General -> Products |Product options|
+2. Copy entire LVGL source code from $(SIMPLELINK\_SDK\_LVGL\_PLUGIN\_INSTALL\_DIR)/source/third\_party/lvgl/ to ${PROJECT\_ROOT}/lvgl/
+3. Add include path to compiler options ``${PROJECT_ROOT}/lvgl`` |Compiler options|
+4. Add pre-defined symbol to compiler options ``--define=LV_CONF_INCLUDE_SIMPLE`` |Compiler options|
+5. Add LVGL Plugin product.json to SysConfig --product option ``${COM_TI_SIMPLELINK_SDK_LVGL_PLUGIN_INSTALL_DIR}/.metadata/product.json``, ensuring that the LVGL Plugin product.json is above the SDK product.json
+
+.. figure:: images/syscfg_5.png
+   :alt: SysCfg options
+
+   SysCfg options
+
+6. Open .syscfg file in text editor (Right-click -> Open With), and add Display BoosterPacks at the top of .syscfg file:
+
+   ::
+
+       // Add a BOOSTXL-SHARP128 boosterpack  
+       var BOOSTXL_SHARP128 = scripting.addHardware("/ti/boards/boosterpacks/BOOSTXL-SHARP128");  
+       // Add a BOOSTXL-K350QVG-S1 boosterpack  
+       var BOOSTXL_K350QVG_S1 = scripting.addHardware("/ti/boards/boosterpacks/BOOSTXL-K350QVG-S1");  
+
+   |SysCfg file|
+7. Open .syscfg with SysConfig Editor then add the LittlevGL Display module and configure library/driver |SysCfg editor|
+8. Modify main.c
+
+   -  Add #include <lv\_port\_disp.h>
+   -  Add #include <lv\_port\_indev.h> if using an input device
+   -  Follow LVGL documentation to initialize and utilize LVGL
+
+Porting Custom Displays
+-----------------------
+
+For detailed instructions on porting a custom display, please follow the `LittlevGL Porting Guide <https://docs.littlevgl.com/en/html/porting/index.html>`__
+
+Following the file structure of the example drivers provided in this Plugin, below are the driver files that need to be ported for a new custom display:
+
+-  **lv\_port\_disp.h, ti\_lvgl\_ssd2119\_disp.c, ti\_lvgl\_ls013b7dh03\_disp.c**
+
+   -  Driver for display controller which contains required LittlevGL functions: disp\_init(), disp\_flush
+   -  Implemented from `LittlevGL's porting templates <https://github.com/littlevgl/lvgl/tree/master/porting>`__: lv\_port\_disp\_template.c & lv\_port\_disp\_template.h
+
+-  **lv\_port\_indev.c, lv\_port\_indev.h**
+
+   -  Driver for input device, such as touchscreen
+   -  Implemented from `LittlevGL's porting templates <https://github.com/littlevgl/lvgl/tree/master/porting>`__: lv\_port\_indev\_template.c & lv\_port\_indev\_template.h
+
+-  **lv\_drv\_conf.h**
+
+   -  Provides macros that abstracts display communication interface calls (such as TI Drivers APIs) from the Display Controller driver
+   -  Implemented from `LittlevGL's display driver template <https://github.com/littlevgl/lv_drivers>`__: lv\_drv\_conf\_templ.h
+
+-  **ti\_lvgl\_disp\_interface.h/c**
+
+   -  Communication interface (SPI, I2C, Parallel) between display controller and host MCU
+
+.. |Compiler options| image:: images/nonsyscfg_2.png
+.. |Compiler options| image:: images/nonsyscfg_3.png
+.. |Product options| image:: images/syscfg_1.png
+.. |Compiler options| image:: images/syscfg_3.png
+.. |Compiler options| image:: images/syscfg_4.png
+.. |SysCfg file| image:: images/syscfg_6.png
+.. |SysCfg editor| image:: images/syscfg_7.png
+
